@@ -16,7 +16,9 @@ The Personnel table (*BEAS_PERS*) has the following **UDFs** used.
 | UDF2 | Location BinLocation | Text | 
 | UDF3 | Generate PO | Checkbox | 
 
-> :memo: **Note:** The Personnel table doesn't allow you to add UDFs because it's a Beas table. The UDFs included in the table are used.
+:::note
+The Personnel table doesn't allow you to add UDFs because it's a Beas table. The UDFs included in the table are used.
+:::
 
 ## User Defined Tables
 
@@ -30,7 +32,9 @@ Supplementary table (*LWMS_Personnel*) required to save the other characteristic
 | exec_transfer | Execute Transfer | Alphanumeric(1) | 
 | gen_transfer_req | Generate Transfer Request | Alphanumeric(1) | 
 
-> :warning: **Warning:** The necessary information for the user to modify the values ​​has not been generated.
+:::caution
+The necessary information for the user to modify the values ​​has not been generated.
+:::
 
 ## Supplementary Data
 

@@ -15,15 +15,15 @@ const config = {
   favicon: 'img/lwms_icon.ico',
 
   // Set the production url of your site here
-  url: 'https://Fonseca-Advisers-LLC.github.io',
+  url: 'https://duvanjbetancourt.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/LWMS_DOC',
+  baseUrl: '/Light_WMS',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Fonseca-Advisers-LLC', // Usually your GitHub org/user name.
-  projectName: 'LWMS_DOC', // Usually your repo name.
+  projectName: 'Light_WMS', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -92,68 +92,65 @@ const config = {
             label: 'Documentation',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},#ecf0f1
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://github.com/facebook/docusaurus',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
+          // {
+          //   title: 'Docs',
+          //   items: [
+          //     {
+          //       label: 'Tutorial',
+          //       to: '/docs/intro',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'Community',
+          //   items: [
+          //     {
+          //       label: 'Stack Overflow',
+          //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          //     },
+          //     {
+          //       label: 'Discord',
+          //       href: 'https://discordapp.com/invite/docusaurus',
+          //     },
+          //     {
+          //       label: 'X',
+          //       href: 'https://x.com/docusaurus',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'More',
+          //   items: [
+          //     {
+          //       label: 'Blog',
+          //       to: '/blog',
+          //     },
+          //     {
+          //       label: 'GitHub',
+          //       href: 'https://github.com/facebook/docusaurus',
+          //     },
+          //   ],
+          // },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Fonseca Advisers LLC.`,
+      },
+      mermaid: {
+        theme: {light: 'neutral', dark: 'dark'},
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
         additionalLanguages: ['mermaid'],
-        mermaid: {
-          theme: {  
-            light: 'classic',
-            dark: 'dark',
-          },
-        }
       },
     }),
     // plugins: ['docusaurus-plugin-mermaid'],
