@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunklwms_doc=self.webpackChunklwms_doc||[]).push([[122],{8197:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/Light_WMS/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
