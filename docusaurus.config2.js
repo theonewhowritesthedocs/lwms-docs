@@ -15,16 +15,15 @@ const config = {
   favicon: 'img/lwms_icon.ico',
 
   // Set the production url of your site here
-  url: 'https://github.com',
+  url: 'https://duvanjbetancourt.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/lwms-docs/',
+  baseUrl: '/Light_WMS',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'theonewhowritesthedocs', // Usually your GitHub org/user name.
-  projectName: 'lwms-docs', // Usually your repo name.
-  deploymentBranch: "gh-pages",
+  organizationName: 'Fonseca-Advisers-LLC', // Usually your GitHub org/user name.
+  projectName: 'Light_WMS', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
