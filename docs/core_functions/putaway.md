@@ -66,7 +66,7 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 The **Bin Location** will only show up if the **Warehouse** is managed by one. Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the field to open the **Location Search** modal.
 
-<details style={{backgroundColor:"#fafafa"}}>
+<details style={{backgroundColor:"#eee", color: ""}}>
 
   <summary>**Location Search Modal**</summary>
 
@@ -108,7 +108,7 @@ Currently, there is no confirmation modal when **deleting** stock lines. If you 
 
 Once you are done, click **Next** to open the **Putaway Completion** modal.
 
-<details style={{backgroundColor:"#fafafa"}}>
+<details style={{backgroundColor:"#eee", color: ""}}>
 
   <summary>**Putaway Completion Modal**</summary>
 
@@ -150,7 +150,7 @@ Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button o
 
 Click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on the **Batch/Serial Number** field to open the **Batches/Serial Numbers: Extended Information** modal.
 
-<details style={{backgroundColor:"#fafafa"}}>
+<details style={{backgroundColor:"#eee", color: ""}}>
 <summary>**Item Search Modal**</summary>
 
 On this screen you need to select one of the **items** listed.
@@ -164,7 +164,7 @@ You can filter the list of **items** using the search box.
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
 </details>
 
-<details style={{backgroundColor:"#fafafa"}}>
+<details style={{backgroundColor:"#eee", color: ""}}>
 <summary>**I-Version Search Modal**</summary>
 
 On this screen you need to select one of the **I-Versions** listed.
@@ -178,7 +178,7 @@ You can filter the list of **I-Versions** using the search box.
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
 </details>
 
-<details style={{backgroundColor:"#fafafa"}}>
+<details style={{backgroundColor:"#eee", color: ""}}>
 <summary>**Batch/Serial Number Search Modal**</summary>
 
 On this screen you need to select one of the **Batches** listed.
@@ -192,7 +192,7 @@ You can filter the list of **Batches** using the search box.
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
 </details>
 
-<details style={{backgroundColor:"#fafafa"}}>
+<details style={{backgroundColor:"#eee", color: ""}}>
 <summary>**Batches/Serial Numbers: Extended Information**</summary>
 
 On this screen you will be able to **add/modify** batches.
