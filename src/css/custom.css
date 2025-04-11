@@ -29,6 +29,20 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.alert {
+html[data-theme='dark'] .theme-admonition-danger {
   background-color: transparent;
+  color: white;
+  border-top: 1px solid var(--ifm-color-danger);
+  border-bottom: 1px solid var(--ifm-color-danger);
+  border-right: 1px solid var(--ifm-color-danger);
+  border-left: 8px solid var(--ifm-color-danger);
+}
+
+html[data-theme='dark'] .theme-admonition-info {
+  background-color: transparent;
+  color: white;
+  border-top: 1px solid var(--ifm-color-info);
+  border-bottom: 1px solid var(--ifm-color-info);
+  border-right: 1px solid var(--ifm-color-info);
+  border-left: 8px solid var(--ifm-color-info);
 }

@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+import CustomDetails from "@site/src/components/CustomDetails";
+
 # Intra-Site Transfer (Putaway)
 
 The Intra-Site Transfer (Putaway) WebApp allows you to transfer stock from one warehouse to another and/or from one bin in a warehouse to another, by either Executing a Transfer directly, or by Generating a Transfer Request that will later be revised and approved/rejected.
@@ -48,9 +50,7 @@ On this screen you need to select the origin location from where you will be tra
 
 You first need to set the **Warehouse**. Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button to open the **Warehouse Search** modal.
 
-<details>
-
-  <summary>**Warehouse Search Modal**</summary>
+<CustomDetails summary="Warehouse Search Modal">
 
 On this screen you need to select one of the **warehouses** listed.
 
@@ -62,13 +62,11 @@ You can filter the list of **warehouses** using the search box.
 
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
 
-</details>
+</CustomDetails>
 
 The **Bin Location** will only show up if the **Warehouse** is managed by one. Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the field to open the **Location Search** modal.
 
-<details>
-
-  <summary>**Location Search Modal**</summary>
+<CustomDetails summary="Location Search Modal">
 
 On this screen you need to select one of the **bin locations** listed.
 
@@ -80,7 +78,7 @@ You can filter the list of **bin locations** using the search box.
 
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
 
-</details>
+</CustomDetails>
 
 :::info
 In the [Configuration](./putaway.md#configuration), if **personnel_origin_location** is set to **true**, the *Personnel*'s location is set as the origin location, that includes the **Bin Location** as well, if applicable. If it is set to **false**, the location must be defined *manually*.
@@ -108,9 +106,7 @@ Currently, there is no confirmation modal when **deleting** stock lines. If you 
 
 Once you are done, click **Next** to open the **Putaway Completion** modal.
 
-<details>
-
-  <summary>**Putaway Completion Modal**</summary>
+<CustomDetails summary="Putaway Completion Modal">
 
 On this modal you need to choose an option between **Execute Transfer** and **Generate Transfer Request**, depending on what you want to do with the stock lines you selected.
 
@@ -138,7 +134,7 @@ If you click **No**, the modal will close, the task **will not** be assigned, an
 
 If you click **Yes**, the modal **will** close and you will be taken to the [**Transfer Request Designation**](../core_functions/transfer_request_designation.md) web app, for you to assign the transfer to someone.
 
-</details>
+</CustomDetails>
 
 ### Add or Modify Stock Line
 
@@ -150,8 +146,7 @@ Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button o
 
 Click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on the **Batch/Serial Number** field to open the **Batches/Serial Numbers: Extended Information** modal.
 
-<details>
-<summary>**Item Search Modal**</summary>
+<CustomDetails summary="Item Search Modal">
 
 On this screen you need to select one of the **items** listed.
 
@@ -162,10 +157,9 @@ You can select any item by clicking on it, which will close the modal and take y
 You can filter the list of **items** using the search box.
 
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
-</details>
+</CustomDetails>
 
-<details>
-<summary>**I-Version Search Modal**</summary>
+<CustomDetails summary="I-Version Search Modal">
 
 On this screen you need to select one of the **I-Versions** listed.
 
@@ -176,26 +170,24 @@ You can select any item by clicking on it, which will close the modal and take y
 You can filter the list of **I-Versions** using the search box.
 
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
-</details>
+</CustomDetails>
 
-<details>
-<summary>**Batch/Serial Number Search Modal**</summary>
+<CustomDetails summary="Batch/Serial Number Search Modal">
 
-On this screen you need to select one of the **Batches** listed.
+On this screen you need to select one of the **Batches/Serial Numbers** listed.
 
 ![Batch search modal](./img/popup_batch_search.png)
 
-You can select any item by clicking on it, which will close the modal and take you back with that **Batch** already set.
+You can select any item by clicking on it, which will close the modal and take you back with that **Batch/Serial Number** already set.
 
-You can filter the list of **Batches** using the search box.
+You can filter the list of **Batches/Serial Numbers** using the search box.
 
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
-</details>
+</CustomDetails>
 
-<details>
-<summary>**Batches/Serial Numbers: Extended Information**</summary>
+<CustomDetails summary="Batches/Serial Numbers: Extended Information">
 
-On this screen you will be able to **add/modify** batches.
+On this screen you will be able to **add/modify** batches/serial numbers.
 
 The first thing you will see is the **Batch** tab, giving you information for the batch selected. You can modify the fields on this tab, and that will be reflected once you are done.
 
@@ -217,7 +209,7 @@ Once you have everything that you need, click the <IIcon icon="zondicons:close-s
 
 ![Batch field showing 2 batches are selected](./img/batch_field_2_baches_selected.png)
 
-</details>
+</CustomDetails>
 
 Selecting the **Item No** will enable the next fields, where applicable. The **I-Version** and **Batch/Serial Number** will only be enabled if the **Item No** has those associated with it.
 

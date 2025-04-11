@@ -1,0 +1,28 @@
+html[data-theme='light'] .custom-details {
+    background-color: #f8f8f8;
+}
+
+html[data-theme='dark'] .custom-details {
+    background-color: transparent;
+}
+
+.custom-details {
+    border: 1px solid #ddd;
+    padding: 1em;
+    border-radius: 5px;
+    background: transparent;
+    margin-bottom: 15px;
+}
+
+.custom-details summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* .custom-details div > p > img {
+    border: 1px solid #ddd;
+} */
+
+.custom-details-content {
+    margin-top: 0.5em;
+}
