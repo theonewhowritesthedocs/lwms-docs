@@ -48,7 +48,7 @@ On this screen you need to select the origin location from where you will be tra
 
 You first need to set the **Warehouse**. Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button to open the **Warehouse Search** modal.
 
-<details style={{backgroundColor:"#fafafa"}}>
+<details style={{backgroundColor:"#eee", color: ""}}>
 
   <summary>**Warehouse Search Modal**</summary>
 
