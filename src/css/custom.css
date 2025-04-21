@@ -46,3 +46,16 @@ html[data-theme='dark'] .theme-admonition-info {
   border-right: 1px solid var(--ifm-color-info);
   border-left: 8px solid var(--ifm-color-info);
 }
+
+html[data-theme='dark'] .theme-admonition-warning {
+  background-color: transparent;
+  color: white;
+  border-top: 1px solid var(--ifm-color-warning);
+  border-bottom: 1px solid var(--ifm-color-warning);
+  border-right: 1px solid var(--ifm-color-warning);
+  border-left: 8px solid var(--ifm-color-warning);
+}
+
+.markdown svg {
+  margin-bottom: -2px;
+}
