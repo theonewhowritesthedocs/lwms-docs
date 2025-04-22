@@ -16,8 +16,8 @@ The Inspection web app allows you to log the results of quality checks on a prod
 stateDiagram-v2
     state "QC Order" as qc_order
     state "QC Flow" as qc_flow
-    state "Sample" as sample
-    state "Test" as test
+    state "Pick a sample" as sample
+    state "Pick a test" as test
     state "Input results by test" as test_results
     state "Input results by sample" as sample_results
     state "Create Activity" as create_activity
@@ -27,8 +27,8 @@ stateDiagram-v2
     [*] --> qc_order
     qc_order --> qc_flow
     qc_flow --> select_qc_flow
-    select_qc_flow --> sample
-    select_qc_flow --> test
+    select_qc_flow --> sample: Sample
+    select_qc_flow --> test: Test
     sample --> test_results
     test --> sample_results
     test_results --> create_activity
