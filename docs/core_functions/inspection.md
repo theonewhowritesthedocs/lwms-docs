@@ -22,16 +22,17 @@ stateDiagram-v2
     state "Input results by sample" as sample_results
     state "Create Activity" as create_activity
 
+    state select_qc_flow <<choice>>
+
     [*] --> qc_order
     qc_order --> qc_flow
-    qc_flow --> sample
-    qc_flow --> test
+    qc_flow --> select_qc_flow
+    select_qc_flow --> sample
+    select_qc_flow --> test
     sample --> test_results
-    test_results --> sample
     test --> sample_results
-    sample_results --> test
-    sample --> create_activity
-    test --> create_activity
+    test_results --> create_activity
+    sample_results --> create_activity
     create_activity --> [*]
 ```
 
