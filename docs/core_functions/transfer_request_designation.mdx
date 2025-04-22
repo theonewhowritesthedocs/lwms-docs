@@ -17,12 +17,20 @@ stateDiagram-v2
     state "Transfer" as transfer_procedure
     state "Transport" as transport_procedure
 
+    state "Transfer Request Assigned" as transfer_request_assigned
+    state "Activity Created" as activity_created
+
+    state select_designation_type <<choice>>
+
     [*] --> transfer_request
     transfer_request --> designation_type
-    designation_type --> transfer_procedure
-    designation_type --> transport_procedure
-    transfer_procedure --> [*]: Transfer Request Assigned
-    transport_procedure --> [*]: Activity Created 
+    designation_type --> select_designation_type
+    select_designation_type --> transfer_procedure
+    select_designation_type --> transport_procedure
+    transfer_procedure --> transfer_request_assigned
+    transport_procedure --> activity_created
+    transfer_request_assigned --> [*]
+    activity_created --> [*]
 ```
 
 ## Screens
