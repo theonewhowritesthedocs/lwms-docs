@@ -14,8 +14,6 @@ The Transfer Request Designation WebApp allows you to assign a transfer request 
 stateDiagram-v2
     state "Transfer Request" as transfer_request
     state "Designation Type" as designation_type
-    state "Transfer" as transfer_procedure
-    state "Transport" as transport_procedure
 
     state "Transfer Request Assigned" as transfer_request_assigned
     state "Activity Created" as activity_created
@@ -25,10 +23,8 @@ stateDiagram-v2
     [*] --> transfer_request
     transfer_request --> designation_type
     designation_type --> select_designation_type
-    select_designation_type --> transfer_procedure
-    select_designation_type --> transport_procedure
-    transfer_procedure --> transfer_request_assigned
-    transport_procedure --> activity_created
+    select_designation_type --> transfer_request_assigned: Transfer
+    select_designation_type --> activity_created: Transport
     transfer_request_assigned --> [*]
     activity_created --> [*]
 ```
