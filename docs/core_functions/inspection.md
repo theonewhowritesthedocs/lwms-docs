@@ -48,7 +48,7 @@ Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button t
 
 <CustomDetails summary="QC Order Search Modal">
 
-On this screen you need to select one of the **QC orders** listed.
+On this modal you need to select one of the **QC orders** listed.
 
 ![QC order search modal](./img-inspection/qc-order-search-modal.png)
 
@@ -59,6 +59,8 @@ You can filter the list of **QC orders** using the search box.
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
 
 </CustomDetails>
+
+Once you select a **QC order**, you will be taken to the [QC Order Summary](./inspection.md#qc-order-summary) screen.
 
 ### QC Order Summary
 
