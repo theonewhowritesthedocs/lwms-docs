@@ -35,7 +35,7 @@ stateDiagram-v2
     trucklog_config --> select_so: Select Carrier Not Provided
     trucklog_config --> option_carrier: Truck log disabled
     trucklog_config --> option_carrier: Select Carrier (Optional)
-    select_carrier1 --> select_cpo1: List checked in Carrier POs
+    select_carrier1 --> select_cpo1
     select_cpo1 --> select_so
     select_so --> select_lines    
     select_lines --> modify_line
@@ -45,7 +45,7 @@ stateDiagram-v2
     carrier_or_not --> select_so: No
     carrier_or_not --> select_carrier2: Yes
     select_carrier2 --> cpo_or_grpo: Do you have a Carrier PO?
-    cpo_or_grpo --> select_cpo2: Yes. <br> List all Carrier POs.
+    cpo_or_grpo --> select_cpo2: Yes
     cpo_or_grpo --> create_grpo: No
     create_grpo --> select_so
     sign --> [*]
