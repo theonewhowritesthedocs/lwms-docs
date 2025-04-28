@@ -52,7 +52,7 @@ On this modal you need to select one of the **QC orders** listed.
 
 ![QC order search modal](./img-inspection/qc-order-search-modal.png)
 
-You can select any item by clicking on it, which will close the modal and take you to the [QC Order Summary](./inspection.md#qc-order-summary) screen with that **QC order** already set.
+You can select any item by clicking on it, which will close the modal with that **QC order** already set.
 
 You can filter the list of **QC orders** using the search box.
 
