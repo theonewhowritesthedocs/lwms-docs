@@ -303,7 +303,7 @@ If you want to **select** a line, click the <IIcon icon="gg:check-r" width="17" 
 
 If you want to **modify** a line, click any of the other columns for that line to go to the [Modify Sale Order Line](./shipping_delivery.md#modify-sale-order-line) screen.
 
-Once you are done, click **Next** at the bottom to go to the [Modify Sale Order Line](./shipping_delivery.md#modify-sale-order-line) screen
+Once you are done, click **Next** at the bottom to go to the [Sign, Save and Print](./shipping_delivery.md#sign_save_and_print) screen.
 
 ### Modify Sale Order Line
 
@@ -429,11 +429,11 @@ Currently, there is no validation for the **Quantity** field. For example, if th
 
 Once you are done, click **Save** at the bottom to save the changes and to go back to the [Sales Order Summary](./shipping_delivery.md#sales-order-summary) screen.
 
-### Signing and Printing
+### Sign, Save and Print
 
 On this screen you need to **confirm** the delivery lines, **sign** the document and **print** it.
 
-![Signing and printing screen](./img-shipping-delivery/signing_printing_screen.png)
+![Sign, save and print screen](./img-shipping-delivery/signing_printing_screen.png)
 
 :::danger[development]
 <u>**Visual:**</u> Field name. 
