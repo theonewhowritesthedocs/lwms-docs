@@ -303,7 +303,7 @@ If you want to **select** a line, click the <IIcon icon="gg:check-r" width="17" 
 
 If you want to **modify** a line, click any of the other columns for that line to go to the [Modify Sale Order Line](./shipping_delivery.md#modify-sale-order-line) screen.
 
-Once you are done, click **Next** at the bottom to go to the [Sign, Save and Print](./shipping_delivery.md#sign_save_and_print) screen.
+Once you are done, click **Next** at the bottom to go to the [Sign, Save and Print](./shipping_delivery.md#sign-save-and-print) screen.
 
 ### Modify Sale Order Line
 
@@ -431,7 +431,7 @@ Once you are done, click **Save** at the bottom to save the changes and to go ba
 
 ### Sign, Save and Print
 
-On this screen you need to **confirm** the delivery lines, **sign** the document and **print** it.
+On this screen you can **confirm** the delivery lines, **sign** the document, **save** it, and **print** it.
 
 ![Sign, save and print screen](./img-shipping-delivery/signing_printing_screen.png)
 
