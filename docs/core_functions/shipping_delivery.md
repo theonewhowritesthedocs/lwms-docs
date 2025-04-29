@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Shipping Delivery
 
-The Shipping Delivery web app allows you to log the information necessary when delivering a sales order, or part of it.
+The Shipping Delivery web app allows you to log the necessary information when delivering a sales order, or part of it.
 
 ## Flow Diagram
 
@@ -47,6 +47,7 @@ stateDiagram-v2
     select_carrier2 --> cpo_or_grpo: Do you have a Carrier PO?
     cpo_or_grpo --> select_cpo2: Yes
     cpo_or_grpo --> create_grpo: No
+    select_cpo2 --> select_so
     create_grpo --> select_so
     sign --> [*]
 ```
@@ -396,7 +397,7 @@ The first thing you will see is the **Batch** tab, giving you information for th
 
 ![Batches: Extended Information search modal, with the Batch tab selected](./img-putaway/popup_batch_extended_information_batch.png)
 
-If you wan to add a new batch, click the <IIcon icon="subway:add" width="17" height="17" />  button to use the **Batch** tab as a form.
+If you want to add a new batch, click the <IIcon icon="subway:add" width="17" height="17" />  button to use the **Batch** tab as a form.
 
 Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the fields to open the search modals. You have the **Batch/Serial Number** and **I-Version** search modals, that you can reference above this dropdown.
 
