@@ -112,10 +112,10 @@ The exact screen you will see will depend on the **Truck Log Enabled or disabled
 
 ---
 
-Click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Carrier Purchase Order Search** modal.
+If you want to use a **Carrier Purchase Order**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Carrier Purchase Order Search** modal.
 
 :::info
-If **Truck Log Enabled or disabled** <u>is</u> checked, the search results will only include carrier purchase orders that have already checked in.
+If **Truck Log Enabled or disabled** <u>is</u> checked in the [Configuration](./shipping_delivery.md#configuration), the search results will only include **carrier purchase orders** that are open <u>and</u> have already checked in.
 :::
 
 <CustomDetails summary='Carrier Purchase Order Search Modal'>
@@ -134,9 +134,11 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 Once you select a **carrier purchase order**, you will be taken to the [Sales Order Selection](./shipping_delivery.md#sales-order-selection) screen.
 
+If instead you want to use a **Goods Receipt Purchase Order** <u>and it is available</u>, click the **Generate GRPO** button to go to the [Goods Receipt Purchase Order Generation](./shipping_delivery.md#goods-receipt-purchase-order-generation) screen.
+
 ### Goods Receipt Purchase Order Generation
 
-On this screen you need to create a **GRPO**. This is an alternative to the **Carrier Purchase Order**.
+On this screen you need to create a **GRPO**. This is an <u>alternative</u> to a **Carrier Purchase Order**.
 
 ![Goods Receipt Purchase Order Generation screen](./img-shipping-delivery/grpo_generation_screen.png)
 
@@ -201,7 +203,7 @@ And last but no least we have the **Quantity**. Set it to the value you see fit.
 Once you are done, click **Save** at the bottom to create the **Goods Receipt Purchase Order** and to go to the [Sales Order Selection](./shipping_delivery.md#sales-order-selection) screen.
 
 :::danger[development]
-Cannot create a GRPO unless there is a Batch/Serial Number <u>correctly</u>set.
+Cannot create a GRPO unless there is a Batch/Serial Number <u>correctly</u> set.
 :::
 
 ### Sales Order Selection
@@ -313,7 +315,7 @@ On this screen you need to **modify** the necessary information on the line so t
 
 The **Item No** comes from the previously chosen line.
 
-Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the fields to open the search modals. You have the **I-Version, Warehouse**, **Bin Location** and **Batch/Serial Number**.
+Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the fields to open the search modals. You have the ****I-Version**, **Warehouse**, **Bin Location** and **Batch/Serial Number**.
 
 <CustomDetails summary="I-Version Search Modal">
 
