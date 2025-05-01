@@ -284,7 +284,7 @@ Once you select a **transfer request**, you will be taken to the [Transfer Reque
 
 ### Transfer Request Summary
 
-On this screen you can **see** a summary of the information so far and **modify/select** sales order lines for delivery.
+On this screen you can **see** a summary of the information so far and **modify/select** transfer request lines for transfer.
 
 ![Transfer request summary and lines screen](./img-shipping-multi-site-transfer/tr_summary_lines_screen.png)
 
@@ -325,7 +325,7 @@ When using a **Carrier PO**, the **Previous** button takes you to the [Carrier P
 
 On this screen you need to **modify** the necessary information on the line so that it matches what is going to be transferred.
 
-![Modify sales order line screen](./img-shipping-multi-site-transfer/modify_tr_line_screen.png)
+![Modify transfer request line screen](./img-shipping-multi-site-transfer/modify_tr_line_screen.png)
 
 :::danger[development]
 The vertical scroll does not work as expected. On small-viewport devices like the iPhone SE or the Samsung Galaxy S8+ in the devtools, the screen does not let you see/interact with the **Destination** locations.
