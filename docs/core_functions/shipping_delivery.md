@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Shipping Delivery
 
-The Shipping Delivery web app allows you to log the necessary information when delivering a sales order, or part of it.
+The Shipping Delivery web app allows you to log the necessary information and execute the necessary actions when delivering sales orders, or part of them.
 
 ## Flow Diagram
 
@@ -16,7 +16,7 @@ The Shipping Delivery web app allows you to log the necessary information when d
 stateDiagram-v2
     state "Select Carrier" as select_carrier1
     state "Option Select Carrier" as option_carrier
-    state "Select SO" as select_so
+    state "Select Sales Order" as select_so
     state "Select Carrier PO" as select_cpo1
     state "Select Carrier" as select_carrier2
     state "Select Carrier PO" as select_cpo2
@@ -29,12 +29,10 @@ stateDiagram-v2
     state carrier_or_not <<choice>>
     state cpo_or_grpo <<choice>>
 
-    [*] --> trucklog_config
-    trucklog_config --> select_carrier1: Truck log enabled
-    trucklog_config --> select_carrier1: Select Carrier (Mandatory)
+    [*] --> trucklog_config: Config
+    trucklog_config --> select_carrier1: Truck log enabled. <br/> Select Carrier (Mandatory).
     trucklog_config --> select_so: Select Carrier Not Provided
-    trucklog_config --> option_carrier: Truck log disabled
-    trucklog_config --> option_carrier: Select Carrier (Optional)
+    trucklog_config --> option_carrier: Truck log disabled. <br/> Select Carrier (Optional).
     select_carrier1 --> select_cpo1
     select_cpo1 --> select_so
     select_so --> select_lines    
@@ -162,7 +160,7 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 </CustomDetails>
 
-The **Bin Location** will only be enabled if the **Warehouse** is managed by one. Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the field to open the **Location Search** modal.
+The **Bin Location** will only be enabled if the **Warehouse** is managed by one. Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the field to open the **Bin Location Search** modal.
 
 :::danger[development]
 <u>**Visual:**</u> Field name. 
@@ -170,11 +168,11 @@ The **Bin Location** will only be enabled if the **Warehouse** is managed by one
 **~BinLocation~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Bin Location**.
 :::
 
-<CustomDetails summary="Location Search Modal">
+<CustomDetails summary="Bin Location Search Modal">
 
 On this screen you need to select one of the **bin locations** listed.
 
-![Location search modal](./img-putaway/popup_location_search.png)
+![Bin Location search modal](./img-putaway/popup_location_search.png)
 
 You can select any item by clicking on it, which will close the modal and take you back with that **bin location** already set.
 
@@ -356,11 +354,11 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 </CustomDetails>
 
-<CustomDetails summary="Location Search Modal">
+<CustomDetails summary="Bin Location Search Modal">
 
 On this screen you need to select one of the **bin locations** listed.
 
-![Location search modal](./img-putaway/popup_location_search.png)
+![Bin Location search modal](./img-putaway/popup_location_search.png)
 
 You can select any item by clicking on it, which will close the modal and take you back with that **bin location** already set.
 
@@ -411,7 +409,7 @@ Once you are done adding/modifying the batches, you can click on the **Batches**
 
 If you want to delete a batch, click the <IIcon icon="ic:baseline-delete" width="17" height="17" /> button for the respective batch.
 
-Once you have everything that you need, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button to close the modal and take you back to the [Add or Modify Stock Line](./putaway.mdx#add-or-modify-stock-line) screen with the new batch information already set.
+Once you have everything that you need, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button to close the modal and take you back with the new batch information already set.
 
 ![Batch field showing 2 batches are selected](./img-putaway/batch_field_2_baches_selected.png)
 
