@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Shipping Multi-Site Transfer
 
-The Shipping Multi-Site Transfer web app allows you to log the necessary information when transfering stock lines from one warehouse to another.
+The Shipping Multi-Site Transfer web app allows you to log the necessary information and execute the necessary actions when transfering stock lines from one warehouse to another.
 
 ## Flow Diagram
 
@@ -19,7 +19,6 @@ stateDiagram-v2
     state "Select Transfer Request" as select_tr
     state "Select Carrier PO" as select_cpo1
     state "Select Carrier" as select_carrier2
-    state "Select Carrier" as select_carrier3
     state "Select Carrier PO" as select_cpo2
     state "Create GRPO" as create_grpo
     state "Select Lines" as select_lines
@@ -30,13 +29,11 @@ stateDiagram-v2
     state carrier_or_not <<choice>>
     state cpo_or_grpo <<choice>>
 
-    [*] --> trucklog_config
-    trucklog_config --> select_carrier1: Truck log enabled
-    trucklog_config --> select_carrier3: Select Carrier (Mandatory)
+    [*] --> trucklog_config: Config
+    trucklog_config --> select_carrier1: Truck log enabled. <br/> Select Carrier (Mandatory).
     trucklog_config --> select_tr: Select Carrier Not Provided
-    trucklog_config --> option_carrier: Truck log disabled
-    trucklog_config --> option_carrier: Select Carrier (Optional)
-    select_carrier1 --> select_cpo1: Only open checked in Carrier POs
+    trucklog_config --> option_carrier: Truck log disabled. <br/> Select Carrier (Optional).
+    select_carrier1 --> select_cpo1
     select_cpo1 --> select_tr
     select_tr --> select_lines    
     select_lines --> modify_line
@@ -44,10 +41,9 @@ stateDiagram-v2
     select_lines --> sign
     option_carrier --> carrier_or_not: Do you want to specify a carrier?
     carrier_or_not --> select_tr: No
-    carrier_or_not --> select_carrier2
+    carrier_or_not --> select_carrier2: Yes
     select_carrier2 --> cpo_or_grpo: Do you have a Carrier PO?
-    select_carrier3 --> select_cpo1: All open Carrier POs
-    cpo_or_grpo --> select_cpo2: Yes. <br> All open Carrier POs.
+    cpo_or_grpo --> select_cpo2: Yes
     cpo_or_grpo --> create_grpo: No
     select_cpo2 --> select_tr
     create_grpo --> select_tr
@@ -188,7 +184,7 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 </CustomDetails>
 
-The **Bin Location** will only be enabled if the **Warehouse** is managed by one. Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the field to open the **Location Search** modal.
+The **Bin Location** will only be enabled if the **Warehouse** is managed by one. Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the field to open the **Bin Location Search** modal.
 
 :::danger[development]
 <u>**Visual:**</u> Field name. 
@@ -196,11 +192,11 @@ The **Bin Location** will only be enabled if the **Warehouse** is managed by one
 **~BinLocation~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Bin Location**.
 :::
 
-<CustomDetails summary="Location Search Modal">
+<CustomDetails summary="Bin Location Search Modal">
 
 On this screen you need to select one of the **bin locations** listed.
 
-![Location search modal](./img-putaway/popup_location_search.png)
+![Bin Location search modal](./img-putaway/popup_location_search.png)
 
 You can select any item by clicking on it, which will close the modal and take you back with that **bin location** already set.
 
@@ -218,7 +214,7 @@ Next up is the **Batch/Serial Number**. This one is not enabled because for this
 The **Batch/Serial Number** should be disabled for this procedure. Currently, it gets enabled after setting the **Warehouse** manually.
 :::
 
-And last but no least we have the **Quantity**. Set it to the value you see fit.
+And last but no least you have the **Quantity**. Set it to the value you see fit.
 
 :::danger[development]
 <u>**Visual:**</u> Field name. 
@@ -303,7 +299,7 @@ On this screen you can **see** a summary of the information so far and **modify/
 | Item                                                  | 1\. **First Line**: ID of the item.<br/>2. **Second Line**: Description of the item.                                                                       |
 | Qty                                                   | 1\. **First Line**: The quantity currently selected to be delivered of that item.<br/>2. **Second Line**: How many items are yet to be delivered.          |
 | Origin                                                | 1\. **First Line**: Warehouse from where the items are going to be taken.<br/>2. **Second Line**: Bin Location from where the items are going to be taken. |
-| Destination                                           | 1\. **First Line**: Warehouse to where the items are going to be transferred.<br/>2. **Second Line**: Bin Location to where the items are going to be transferred. |                                                                                                    |
+| Destination                                           | 1\. **First Line**: Warehouse to where the items are going to be transferred.<br/>2. **Second Line**: Bin Location to where the items are going to be transferred. |
 
 </CustomDetails>
 
@@ -366,11 +362,11 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 </CustomDetails>
 
-<CustomDetails summary="Origin and Destination Location Search Modal">
+<CustomDetails summary="Origin and Destination Bin Location Search Modal">
 
 On this screen you need to select one of the **bin locations** listed.
 
-![Location search modal](./img-putaway/popup_location_search.png)
+![Bin Location search modal](./img-putaway/popup_location_search.png)
 
 You can select any item by clicking on it, which will close the modal and take you back with that **bin location** already set.
 
@@ -423,7 +419,7 @@ Once you are done adding/modifying the batches, you can click on the **Batches**
 
 If you want to delete a batch, click the <IIcon icon="ic:baseline-delete" width="17" height="17" /> button for the respective batch.
 
-Once you have everything that you need, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button to close the modal and take you back to the [Add or Modify Stock Line](./putaway.mdx#add-or-modify-stock-line) screen with the new batch information already set.
+Once you have everything that you need, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button to close the modal and take you back with the new batch information already set.
 
 ![Batch field showing 2 batches are selected](./img-putaway/batch_field_2_baches_selected.png)
 
