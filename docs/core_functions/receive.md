@@ -427,7 +427,7 @@ On this modal you need to select one of the **items** listed.
 
 ![Item No search modal](./img-receive/item_search_modal.png)
 
-You can select any item by clicking on it, which will close the modal and take you to the [](./) screen with that **item** already set.
+You can select any item by clicking on it, which will close the modal and take you back with that **item** already set.
 
 You can filter the list of **items** using the search box.
 
