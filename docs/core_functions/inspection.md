@@ -8,32 +8,51 @@ import TabItem from '@theme/TabItem';
 
 # Inspection
 
-The Inspection web app allows you to log the results of quality checks on a production order by samples or tests.
+The Inspection web app allows you to log the results of quality checks on a production order by samples/tests and execute further actions.
 
 ## Flow Diagram
 
 ```mermaid
 stateDiagram-v2
-    state "QC Order" as qc_order
-    state "QC Flow" as qc_flow
-    state "Pick a sample" as sample
-    state "Pick a test" as test
-    state "Input results by test" as test_results
-    state "Input results by sample" as sample_results
-    state "Create Activity" as create_activity
+    state "Select QC Order" as qc_order
+    state "QC Order summary" as qcsummary1
+    state "QC Order summary" as qcsummary2
+    state "QC Order summary" as qcsummary3
+    state "Block/release batches" as brbatches
+    state "Select a sample" as sample
+    state "Select a test" as test
+    state "Input results per test" as test_results
+    state "Input results per sample" as sample_results
+    state "Create activity" as create_activity1
+    state "Create activity" as create_activity2
+    state "Attach pictures" as pics1
+    state "Attach pictures" as pics2
 
-    state select_qc_flow <<choice>>
+    state select_qcsummary <<choice>>
 
     [*] --> qc_order
-    qc_order --> qc_flow
-    qc_flow --> select_qc_flow
-    select_qc_flow --> sample: Sample
-    select_qc_flow --> test: Test
+    qc_order --> qcsummary1
+    qcsummary1 --> brbatches: Managed by batch
+    brbatches --> qcsummary1
+    qcsummary1 --> select_qcsummary: QC flow
+    select_qcsummary --> sample: Sample
+    select_qcsummary --> test: Test
     sample --> test_results
+    test_results --> sample
+    test_results --> qcsummary2: No more open
     test --> sample_results
-    test_results --> create_activity
-    sample_results --> create_activity
-    create_activity --> [*]
+    sample_results --> test
+    sample_results --> qcsummary3: No more open
+    test_results --> pics1
+    pics1 --> test_results
+    sample_results --> pics2
+    pics2 --> sample_results
+    qcsummary2 --> create_activity1
+    qcsummary3 --> create_activity2
+    create_activity1 --> [*]
+    create_activity2 --> [*]
+    qcsummary2 --> [*]
+    qcsummary3 --> [*]
 ```
 
 ## Screens
@@ -68,33 +87,56 @@ On this screen you can see a summary of the **QC Order** you selected, including
 
 ![QC order summary](./img-inspection/qc-order-summary-screen.png)
 
-<!-- :::warning[documentation]
-Explain the values shown in the summary.
-::: -->
+<CustomDetails summary="Field Reference">
+| Field | Description |
+| ---| --- |
+| QC Order | QC Order number and the creation date. |
+| Document | Document ID. |
+| Item No | Item number. |
+| Description | Item description. |
+| Quantity | Quantity already posted or to be checked. |
+| Open | Number of samples not yet released. |
+| Ok | Number of released samples. |
+| Error | Number of samples marked as faulty. |
+</CustomDetails>
 
-You can choose one of the available workflows for the QC: **Sample** and **Test**.
+Click the **View Batches** button to open the **Batches Status Modal**.
+
+<CustomDetails summary="Batches Status Modal">
+
+On this modal you can change the status of the batches associated with the QC order. You can **block** or **release** batches.
+
+![Batches status modal](./img-inspection/batch_status_modal.png)
+
+You can change the status by clicking on the **Status** column for any of the batches. The update is done at that moment.
+
+If you want to close the modal, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> or **Close** buttons.
+
+</CustomDetails>
+
+:::info
+The **View Batches** button will only be shown when the item is managed by batches.
+:::
+
+The next step is selecting the way in which you want to input the results: **Sample** and **Test**.
 
 ![QC Order workflow dropdown menu](./img-inspection/qc-order-workflow-dropdown-menu.png)
 
-Once you select a workflow, click **Next** to go to that workflow screen: [Sample](./inspection.md#sf-samples-summary) or [Test](./inspection.md#tf-tests-summary).
+Once you select one, click **Next** to go to the respective screen: [Sample: Samples Summary](./inspection.md#sample-samples-summary) or [Test: Tests Summary](./inspection.md#test-tests-summary).
 
-### Sample Flow (SF)
-
-#### SF: Samples Summary
+### Sample: Samples Summary
 
 On this screen you can see a summary of the **samples** associated with the selected QC order.
 
 ![Samples summary screen](./img-inspection/sflow-samples-summary-screen.png)
 
 <CustomDetails summary="Table Reference">
-
-| Column                                                      | Description                                                       |
-| ------------------------------------------------------------| ----------------------------------------------------------------- |
-| <IIcon icon="pepicons-pop:dots-x" width="17" height="17"/>  | Action button for opening the Sample: Extended Information modal. |
-| Sample                                                      | The ID of the sample.                                             |
-| Untested                                                    | Number of units left to test.                                     |
-| Last Change                                                 | The date for when the actual sample was last modified.            |
-
+| Column | Description |
+| --- | --- |
+| <IIcon icon="pepicons-pop:dots-x" width="17" height="17"/> | Action button for opening the **Sample: Extended Information** modal. |
+| Sample | Sample number. |
+| Untested | Number of unchecked measurement positions.|
+| Last Change | When the sample was last modified. |
 </CustomDetails>
 
 You can use the search box on the top of the screen to filter samples by the **Sample** and **Untested** values.
@@ -115,19 +157,11 @@ You can give a sample up to two release reasons using the **Release 1** and **Re
 If you set **Release 1** to either **Released** or **Locked**, the **sample** will go away as completed.
 :::
 
-:::danger[development]
-In **Release 1**, the options **Manually Locked** and **Manually Reopen** seem to not be working.
-:::
-
 **Release 2** can only be checked when **Release 1** is set to **Released.**
 
 Use the **Blockage Reason** field for giving the sample a reason for a blockage by choosing one of the options. For giving it extra comments using the <IIcon icon="ion:information-sharp" width="17" height="17"/> field below it.
 
 You can also give the sample a **Valuation** from the list of options and extra information.
-
-:::danger[development]
-The **Valuation** field is yet to be configured.
-:::
 
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> or **Cancel** buttons.
 
@@ -135,9 +169,9 @@ Click **Save** to save the changes and close the modal.
 
 </CustomDetails>
 
-Click on any other columns of a sample to go to the [Tests](./inspection.md#sf-tests-summary) screen for it.
+Click on any other columns of a sample to go to the [Sample: Tests Summary](./inspection.md#sample-tests-summary) screen for it.
 
-#### SF: Tests Summary
+### Sample: Tests Summary
 
 On this screen you can see a summary of the **tests** assigned to the selected sample.
 
@@ -210,9 +244,7 @@ If you want to close any of the modals without saving anything, click the <IIcon
 
 Once you are done with all the samples in the QC Order, click the <IIcon icon="fa:gears" width="17" height="17"/> button at the bottom to go to the [Create Activity](./inspection.md#create-activity) screen.
 
-### Test Flow (TF)
-
-#### TF: Tests Summary
+### Test: Tests Summary
 
 On this screen you can see a summary of the **tests** associated with the selected QC order.
 
@@ -248,7 +280,7 @@ Click on any other columns of a test to go to the [Samples](./inspection.md#tf-s
 
 Once you are done with all the tests for all the samples in the QC Order, click the <IIcon icon="fa:gears" width="17" height="17"/> button at the bottom to go to the [Create Activity](./inspection.md#create-activity) screen.
 
-#### TF: Samples Summary
+### Test: Samples Summary
 
 On this screen you can see a summary of the **samples** for which the selected test applies.
 
