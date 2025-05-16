@@ -154,7 +154,9 @@ On this modal you can see and update other information on a **sample**.
 You can give a sample up to two release reasons using the **Release 1** and **Release 2** fields.
 
 :::info
-If you set **Release 1** to either **Released** or **Locked**, the **sample** will go away as completed.
+If you set **Release 1** to either **Released**, the sample will be released and removed from the list. You can only release it from here if the sample does not have measurements already saved.
+
+If you set **Release 1** to either **Locked**, the sample will be locked and removed from the list.
 :::
 
 **Release 2** can only be checked when **Release 1** is set to **Released.**
@@ -178,7 +180,6 @@ On this screen you can see a summary of the **tests** assigned to the selected s
 ![Tests summary screen](./img-inspection/sflow-tests-summary-screen.png)
 
 <CustomDetails summary="Table Reference">
-
 | Column   | Description                                                     |
 | -------- | --------------------------------------------------------------- |
 |          | Indication of passing                                           |
@@ -187,7 +188,6 @@ On this screen you can see a summary of the **tests** assigned to the selected s
 | Measure  | Value taken.                                                    |
 | UoM      | Unit of Measure, e.g. cm.                                       |
 | OK       | Indication of passing.                                          |
-
 </CustomDetails>
 
 You can use the search box on the top of the screen to filter tests by the **Pos** and **QC Order** values.
@@ -202,19 +202,19 @@ On the **Measurement** tab you can input the results for the test on a specific 
 
 ![Unique test summary measurement tab modal](./img-inspection/sflow-unique-test-sumamary-measurement-tab-modal.png)
 
-First, input the result that you got for this test. Use the **Value** field for that. Some tests will give you the conditions to pass. When the **value** meets those, the **OK** checkbox will automatically be ticked. You can always check/uncheck it manually.
+First, input the result that you got for this test. Use the **Value** field for that. Some tests will give you the conditions to pass. When the **value** meets those, the **OK** checkbox will automatically be ticked. This will depend on the inspection plan.
+
+:::info
+If you give **OKs** to all the tests for a sample, it will be **released** and removed from the list.
+:::
 
 Use the **Blockage Reason** field for giving the sample a reason for a blockage by choosing one of the options. For giving it extra comments using the <IIcon icon="ion:information-sharp" width="17" height="17"/> field below it.
 
 :::info
-If you give **OKs** or **Blockage Reasons** to all the tests for a sample, the sample will go away as completed.
+If you give **Blockage Reasons** to at least one test for a sample, it will be **locked** and removed from the list.
 :::
 
 You can also give the sample a **Valuation** from the list of options and extra information.
-
-:::danger[development]
-The **Valuation** field is yet to be configured.
-:::
 
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> or **Cancel** buttons.
 
@@ -228,7 +228,7 @@ You can also add pictures as proof for the tests that were applied. For that, cl
 
 <CustomDetails summary="Add Picture Modal">
 
-On this modal you can **take a picture** of the samples, **link it** to the QC Order and **print a report**.
+On this modal you can **take a picture** of the samples and **link it** to the QC Order.
 
 First, you need to give the picture a name and then click **Confirm**.
 
@@ -242,7 +242,9 @@ If you want to close any of the modals without saving anything, click the <IIcon
 
 </CustomDetails>
 
-Once you are done with all the samples in the QC Order, click the <IIcon icon="fa:gears" width="17" height="17"/> button at the bottom to go to the [Create Activity](./inspection.md#create-activity) screen.
+Once you are done here, click **Previous** at the bottom to go back to the [Sample: Samples Summary](./inspection.md#sample-samples-summary) screen and continue with other samples, if applicable.
+
+Once there are no more samples left, you will be automatically taken to the [Final QC Order Summary](./inspection.md#final-qc-order-summary) screen.
 
 ### Test: Tests Summary
 
@@ -251,7 +253,6 @@ On this screen you can see a summary of the **tests** associated with the select
 ![Tests summary screen](./img-inspection/tflow-tests-summary-screen.png)
 
 <CustomDetails summary="Table Reference">
-
 | Column      | Description                                                 |
 | ----------- | ----------------------------------------------------------- |
 |             | Action button for opening the Test: Extended Summary modal. |
@@ -259,7 +260,6 @@ On this screen you can see a summary of the **tests** associated with the select
 | T           | Type of the test.                                           |
 | QC Order    | Name of the test.                                           |
 | Methodology | Description of how the test works.                          |
-
 </CustomDetails>
 
 You can use the search box on the top of the screen to filter tests by the **Pos** and **QC Order** values.
@@ -276,9 +276,7 @@ If you want to close the modal, click the <IIcon icon="zondicons:close-solid" wi
 
 </CustomDetails>
 
-Click on any other columns of a test to go to the [Samples](./inspection.md#tf-samples-summary) screen for it.
-
-Once you are done with all the tests for all the samples in the QC Order, click the <IIcon icon="fa:gears" width="17" height="17"/> button at the bottom to go to the [Create Activity](./inspection.md#create-activity) screen.
+Click on any other columns of a test to go to the [Test: Samples Summary](./inspection.md#test-samples-summary) screen for it.
 
 ### Test: Samples Summary
 
@@ -286,20 +284,14 @@ On this screen you can see a summary of the **samples** for which the selected t
 
 ![Test flow: samples summary measurement](./img-inspection/tflow-samples-summary-screen.png)
 
-:::danger[development]
-The OK column is repeated.
-:::
-
 <CustomDetails summary="Table Reference">
-
 | Column                                                     | Description                                                       |
 | ---------------------------------------------------------- | ----------------------------------------------------------------- |
-| <IIcon icon="pepicons-pop:dots-x" width="17" height="17"/> | Action button for opening the Sample: Extended Information modal. |
+| <IIcon icon="pepicons-pop:dots-x" width="17" height="17"/> | Action button for opening the **Sample: Extended Information modal**. |
 | Sample                                                     | ID of the sample.                                                 |
 | Measure                                                    | Value taken.                                                      |
 | UoM                                                        | Unit of Measure, e.g. cm.                                         |
 | OK                                                         | Indication of passing.                                            |
-
 </CustomDetails>
 
 You can use the search box on the top of the screen to filter samples by the **Sample** value.
@@ -315,11 +307,9 @@ On this modal you can see and update other information on a **sample**.
 You can give a sample up to two release reasons using the **Release 1** and **Release 2** fields.
 
 :::info
-If you set **Release 1** to either **Released** or **Locked**, the **sample** will go away as completed.
-:::
+If you set **Release 1** to either **Released**, the sample will be released and removed from the list. You can only release it from here if the sample does not have measurements already saved.
 
-:::danger[development]
-In **Release 1**, the options **Manually Locked** and **Manually Reopen** seem to not be working.
+If you set **Release 1** to either **Locked**, the sample will be locked and removed from the list.
 :::
 
 **Release 2** can only be checked when **Release 1** is set to **Released.**
@@ -328,19 +318,13 @@ Use the **Blockage Reason** field for giving the sample a reason for a blockage 
 
 You can also give the sample a **Valuation** from the list of options and extra information.
 
-:::danger[development]
-The **Valuation** field is yet to be configured.
-:::
-
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> or **Cancel** buttons.
 
 Click **Save** to save the changes and close the modal.
 
 </CustomDetails>
 
-Click on any columns of a sample to open the **Test: Extended Information** modal.
-
-
+Click on any of the other columns of a sample to open the **Test: Extended Information** modal.
 
 <CustomDetails summary="Test: Extended Information Modal">
 
@@ -350,19 +334,19 @@ On the **Measurement** tab you can input the results for the test on a specific 
 
 ![Test flow: unique test extended information modal](./img-inspection/tflow-unique-test-information.png)
 
-First, input the result that you got for this test. Use the **Value** field for that. Some tests will give you the conditions to pass. When the **value** meets those, the **OK** checkbox will automatically be ticked. You can always check/uncheck it manually.
+First, input the result that you got for this test. Use the **Value** field for that. Some tests will give you the conditions to pass. When the **value** meets those, the **OK** checkbox will automatically be ticked. This will depend on the inspection plan.
+
+:::info
+If you give **OKs** to all the tests for a sample, it will be **released** and removed from the list.
+:::
 
 Use the **Blockage Reason** field for giving the sample a reason for a blockage by choosing one of the options. For giving it extra comments using the <IIcon icon="ion:information-sharp" width="17" height="17"/> field below it.
 
 :::info
-If you give **OKs** or **Blockage Reasons** to all the tests for a sample, the sample will go away as completed.
+If you give **Blockage Reasons** to at least one test for a sample, it will be **locked** and removed from the list.
 :::
 
 You can also give the sample a **Valuation** from the list of options and extra information.
-
-:::danger[development]
-The **Valuation** field is yet to be configured.
-:::
 
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> or **Cancel** buttons.
 
@@ -370,13 +354,13 @@ Click **Save** to save the changes and close the modal.
 
 </CustomDetails>
 
-You will be seeing the results reflected on the table for each of the samples selected.
+You will be seeing the results reflected on the table for each of the samples modified.
 
 You can also add pictures as proof for the tests that were applied. For that, click the <IIcon icon="mdi:camera" width="17" height="17"/> button at the bottom to open the **Add Picture** modal.
 
 <CustomDetails summary="Add Picture Modal">
 
-On this modal you can **take a picture** of the samples, **link it** to the QC Order and **print a report**.
+On this modal you can **take a picture** of the samples and **link it** to the QC Order.
 
 First, you need to give the picture a name and then click **Confirm**.
 
@@ -390,7 +374,19 @@ If you want to close any of the modals without saving anything, click the <IIcon
 
 </CustomDetails>
 
-Once you are done with all the samples under the selected test, click the **Previous** button at the bottom to go to the [Tests](./inspection.md#tf-tests-summary) screen and continue with other tests, if appicable.
+Once you are done here, click the **Previous** button at the bottom to go back to the [Test: Tests Summary](./inspection.md#test-tests-summary) screen and continue with other tests, if applicable.
+
+Once there are no more samples left, you will be automatically taken to the [Final QC Order Summary](./inspection.md#final-qc-order-summary) screen.
+
+### Final QC Order Summary
+
+On this screen you can see a **summary** of the QC order after being done with all the samples.
+
+![Final QC order summary screen](./img-inspection/final_qc_order_summary_screen.png)
+
+If you want to create an activity for the QC order now that you are done, click the <IIcon icon="fa:gears" width="17" height="17"/> button at the bottom to go to the [Create Activity](./inspection.md#create-activity) screen.
+
+If not, click **Next** at the bottom to go to the [Home](./inspection.md#qc-order-selection) screen for you to start a new inspection.
 
 ### Create Activity
 
@@ -457,11 +453,3 @@ The title of the modal does not match its functionality. **~User~** <IIcon icon=
 And  last but not least, you can use the **Comment** field to add extra information on the process.
 
 Once you are done, click **Next** to create the corresponding **activity** (do not forget to take note of it) and to go to the [Home](./inspection.md#qc-order-selection) screen for you to start a new inspection.
-
-:::danger[development]
-After the activity is created, the user is taken back to the previous screen, instead of the [Home](./inspection.md#qc-order-selection) screen.
-:::
-
-:::danger[development]
-Multiple activities can be created for the same QC order, instead of just one.
-:::
