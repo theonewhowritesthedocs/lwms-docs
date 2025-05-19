@@ -77,10 +77,6 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 Next up is the **Due Date**. Click the <IIcon icon="majesticons:calendar" width="17" height="17" /> button to select a date.
 
-:::danger[development]
-Currently, there is no validation for selecting a date in the past.
-:::
-
 You also have the **Remarks** field to leave some comments.
 
 And last but not least, you have the **Transfer Lines** associated with the current **transfer request**. Use this section to revise the information and to change the **Priority** of any of the lines, if needed.

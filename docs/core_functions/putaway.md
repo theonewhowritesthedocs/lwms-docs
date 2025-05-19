@@ -83,9 +83,9 @@ If you want to close the modal without making any changes, click the <IIcon icon
 In the [Configuration](./putaway.md#configuration), if **personnel_origin_location** is set to **true**, the *Personnel*'s location is set as the origin location, that includes the **Bin Location** as well, if applicable. If it is set to **false**, the location must be defined *manually*.
 :::
 
-Once you are done, click **Next** to go to the [Stock Lines](./putaway.md#stock-lines) screen.
+Once you are done, click **Next** to go to the [Stock Lines Summary](./putaway.md#stock-lines) screen.
 
-### Stock Lines
+### Stock Lines Summary
 
 <!-- [<IIcon icon="nrk:back" width="17" height="17" /> Go back to the **Origin Location** screen](./putaway.md#origin-location) -->
 
@@ -98,10 +98,6 @@ First, you need to **add** a stock line. For that, click the **Add Stock** butto
 You can also **edit** any of the stock lines you already have by clicking on the <IIcon icon="bx:edit" width="17" height="17" /> button associated with the respective stock line.
 
 If you want to delete a stock line, click the <IIcon icon="ic:baseline-delete" width="17" height="17" /> button for the respective stock.
-
-:::danger[development]
-Currently, there is no confirmation modal when **deleting** stock lines. If you click delete, the stock line will be deleted **immediately**.
-:::
 
 Once you are done, click **Next** to open the **Putaway Completion** modal.
 
@@ -214,17 +210,13 @@ Selecting the **Item No** will enable the next fields, where applicable. The **I
 
 The **Quantity** will depend on the **Batch/Serial Number** selected.
 
-:::danger[development]
-Currently, there is no validation for the **Quantity** field. For example, if the **Batch/Serial Number** has a maximum number of items of 10, you *can* set the **Quantity** to a value exceding that limit, i.e. 15, but that will give you an error and will not let you continue to the next screen.
-:::
-
 The **Destination Warehouse** is the location to where the stock is going to be transferred. Below the **Destination Warehouse**, you will find a **Destination Bin Location** field, only if the **Destination Warehouse** is managed by one.
 
 :::info
 If **putaway_location** is set to **Y**, the **Destination Warehouse** will be the *default* of the item selected, and that will be *mandatory*. If it is set to **N**, the **Destination Warehouse** will need to be selected *manually*. If it is set to **O**, the **Destination Warehouse** will be the *default* of the item selected, and that will be *optional*. This all includes the **Destination Bin Location** as well, if applicable.
 :::
 
-Once you are done, click **Next** to go back to the [Stock Lines](./putaway.md#stock-lines) screen.
+Once you are done, click **Next** to go back to the [Stock Lines Summary](./putaway.md#stock-lines) screen.
 
 ## Configuration
 
