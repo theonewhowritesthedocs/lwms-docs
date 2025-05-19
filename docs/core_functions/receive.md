@@ -107,7 +107,7 @@ Once you select an option, you will be taken to the respective screen, depending
 ### Carrier Selection
 
 :::info
-This screen is only shown if **Carrier PO requeried PO** is set to **The Carrier PO is the default of Item  (Optional/Mandatory)** in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
+This screen is only shown if **Carrier PO required PO** is set to **The Carrier PO is the default of Item  (Optional/Mandatory)** in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
 :::
 
 On this screen you need to select a **carrier**.
@@ -149,7 +149,7 @@ Once you select a **carrier**, you will be taken to the [Carrier PO/GRPO Selecti
 ### Carrier PO/GRPO Selection
 
 :::info
-This screen is only shown if **Carrier PO requeried PO** is set to **The Carrier PO is the default of Item  (Optional/Mandatory)** in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
+This screen is only shown if **Carrier PO required PO** is set to **The Carrier PO is the default of Item  (Optional/Mandatory)** in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
 :::
 
 On this screen you need to select a **carrier po** associated with the carrier you previously chose, or create a **carrier grpo**.
