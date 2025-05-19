@@ -45,7 +45,7 @@ On this screen you need to select one of the **transfer requests** listed.
 
 ![Transfer request search modal](./img-transfer-request-designation/transfer-request-search-modal.png)
 
-You can select any item by clicking on it, which will close the modal and take you to the [Transfer](./transfer_request_designation.mdx#transfer) screen with that **transfer request** already set.
+You can select any item by clicking on it, which will close the modal and take you to the [Transfer](./transfer_request_designation.md#transfer) screen with that **transfer request** already set.
 
 You can filter the list of **transfer requests** using the search box.
 
@@ -86,10 +86,10 @@ You also have the **Remarks** field to leave some comments.
 And last but not least, you have the **Transfer Lines** associated with the current **transfer request**. Use this section to revise the information and to change the **Priority** of any of the lines, if needed.
 
 :::info
-If you want to change the **designation type**, click the [Transport](./transfer_request_designation.mdx#transport) tab.
+If you want to change the **designation type**, click the [Transport](./transfer_request_designation.md#transport) tab.
 :::
 
-Once you are done, click **Next** to finish the **transfer** process and to go to the [Home](./transfer_request_designation.mdx#transfer-request-selection) screen for you to start a new designation.
+Once you are done, click **Next** to finish the **transfer** process and to go to the [Home](./transfer_request_designation.md#transfer-request-selection) screen for you to start a new designation.
 
 ### Transport
 
@@ -154,7 +154,7 @@ The title of the modal does not match its functionality. **~User~** <IIcon icon=
 And  last but not least, you can use the **Comment** field to add extra information on the process.
 
 :::info
-If you want to change the **designation type**, click the [Transfer](./transfer_request_designation.mdx#transfer) tab.
+If you want to change the **designation type**, click the [Transfer](./transfer_request_designation.md#transfer) tab.
 :::
 
-Once you are done, click **Next** to finish the **transport** process, create the corresponding **activity** (do not forget to take note of it), and to go to the [Home](./transfer_request_designation.mdx#transfer-request-selection) screen for you to start a new designation.
+Once you are done, click **Next** to finish the **transport** process, create the corresponding **activity** (do not forget to take note of it), and to go to the [Home](./transfer_request_designation.md#transfer-request-selection) screen for you to start a new designation.
