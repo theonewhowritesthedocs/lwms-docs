@@ -6,15 +6,15 @@ import CustomDetails from "@site/src/components/CustomDetails";
 
 # Intra-Site Transfer (Putaway)
 
-The Intra-Site Transfer (Putaway) WebApp allows you to transfer stock from one warehouse to another and/or from one bin in a warehouse to another, by either Executing a Transfer directly, or by Generating a Transfer Request that will later be revised and approved/rejected.
+The Intra-Site Transfer (Putaway) WebApp allows you to transfer stock from one warehouse to another and/or from one bin to another, by either Executing a Transfer directly or by Generating a Transfer Request that will later be revised and approved/rejected.
 
 ## Flow Diagram
 
 ```mermaid
 stateDiagram-v2
-    state "Origin Location" as select_origin_location
-    state "Stock Lines" as stock
-    state "Add or Modify Stock Line" as select_stock
+    state "Select Origin Location" as select_origin_location
+    state "Stock Lines Summary" as stock
+    state "Add/Modify Line" as select_stock
     state "Generate Transfer Request" as generate_transfer_req
     state "Go to Transfer Request Designation" as transfer_req_designation
     state "Execute Transfer" as exec_transfer
@@ -28,21 +28,22 @@ stateDiagram-v2
     select_stock --> stock
 
     
-    stock --> if_finish_op
-    if_finish_op --> exec_transfer: Configuration Yes
+    stock --> if_finish_op: Operation type
+    if_finish_op --> exec_transfer
     exec_transfer --> [*]
 
     if_finish_op --> generate_transfer_req
-    generate_transfer_req --> if_transfer_req_designation
-    if_transfer_req_designation --> transfer_req_designation
-    if_transfer_req_designation --> [*]
-    transfer_req_designation --> [*]    
+    generate_transfer_req --> if_transfer_req_designation:  Assign
+    if_transfer_req_designation --> transfer_req_designation: Yes
+    if_transfer_req_designation --> [*]: No
+    transfer_req_designation --> [*]
 ```
+
 ## Screens
 
 ### Origin Location
 
-On this screen you need to select the origin location from where you will be transfering the stock lines.
+On this screen you need to select the location from where you will be taking the stock.
 
 ![Origin Location](./img-putaway/origin_location.png)
 
@@ -79,28 +80,24 @@ If you want to close the modal without making any changes, click the <IIcon icon
 </CustomDetails>
 
 :::info
-In the [Configuration](./putaway.mdx#configuration), if **personnel_origin_location** is set to **true**, the *Personnel*'s location is set as the origin location, that includes the **Bin Location** as well, if applicable. If it is set to **false**, the location must be defined *manually*.
+In the [Configuration](./putaway.md#configuration), if **personnel_origin_location** is set to **true**, the *Personnel*'s location is set as the origin location, that includes the **Bin Location** as well, if applicable. If it is set to **false**, the location must be defined *manually*.
 :::
 
-Once you are done, click **Next** to go to the [Stock Lines](./putaway.mdx#stock-lines) screen.
+Once you are done, click **Next** to go to the [Stock Lines Summary](./putaway.md#stock-lines) screen.
 
-### Stock Lines
+### Stock Lines Summary
 
-<!-- [<IIcon icon="nrk:back" width="17" height="17" /> Go back to the **Origin Location** screen](./putaway.mdx#origin-location) -->
+<!-- [<IIcon icon="nrk:back" width="17" height="17" /> Go back to the **Origin Location** screen](./putaway.md#origin-location) -->
 
-On this screen you need to select the stock lines.
+On this screen you need to select the stock lines that will be transferred.
 
 ![Origin Location](./img-putaway/stock_lines_ready.png)
 
-First, you need to **add** a stock line. For that, click the **Add Stock** button. That will take you to the [Add or Modify Stock Line](./putaway.mdx#add-or-modify-stock-line) screen, for you to select/modify the necessary information.
+First, you need to **add** a stock line. For that, click the **Add Stock** button. That will take you to the [Add or Modify Stock Line](./putaway.md#add-or-modify-stock-line) screen, for you to select/modify the necessary information.
 
 You can also **edit** any of the stock lines you already have by clicking on the <IIcon icon="bx:edit" width="17" height="17" /> button associated with the respective stock line.
 
 If you want to delete a stock line, click the <IIcon icon="ic:baseline-delete" width="17" height="17" /> button for the respective stock.
-
-:::danger[development]
-Currently, there is no confirmation modal when **deleting** stock lines. If you click delete, the stock line will be deleted **immediately**.
-:::
 
 Once you are done, click **Next** to open the **Putaway Completion** modal.
 
@@ -110,7 +107,7 @@ On this modal you need to choose an option between **Execute Transfer** and **Ge
 
 ![Modal for choosing between Execute Transfer and Generate Transfer Request](./img-putaway/popup_choose_execute_generate_transfer.png).
 
-Select **Transfer Request** if you want to execute a transfer **but not** assign it.
+Select **Execute transfer** if you want to execute the transfer directly.
 
 Select **Generate Transfer Request** if you want to generate a transfer request **and** assign it.
 
@@ -120,7 +117,7 @@ Stock lines for which already a **Generate Transfer Request** has been applied, 
 
 After any of the options is selected, you will see a summary of what was done and information on the document that was created.
 
-Once you have taken note of the information you need, click the **Ok** or the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button for closing the modal. If you chose **Execute Transfer**, the buttons will take you to the [**Home**](./putaway.mdx#origin-location) screen. If you chose **Generate Transfer Request**, then they will open the **Task Designation** modal.
+Once you have taken note of the information you need, click the **Ok** or the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button for closing the modal. If you chose **Execute Transfer**, the buttons will take you to the [**Home**](./putaway.md#origin-location) screen. If you chose **Generate Transfer Request**, then they will open the **Task Designation** modal.
 
 #### Task Designation Modal
 
@@ -128,9 +125,9 @@ On this screen you need to choose between making a **Transfer Request Assignment
 
 ![Task assignment modal](./img-putaway/task_assignment.png)
 
-If you click **No**, the modal will close, the task **will not** be assigned, and you will be taken to the [**Home**](./putaway.mdx#origin-location) screen to start a new transfer.
+If you click **No**, the modal will close, the task **will not** be assigned, and you will be taken to the [**Home**](./putaway.md#origin-location) screen to start a new transfer.
 
-If you click **Yes**, the modal **will** close and you will be taken to the [**Transfer Request Designation**](../core_functions/transfer_request_designation.mdx#transfer) web app, for you to assign the transfer to someone.
+If you click **Yes**, the modal will close and you will be taken to the [**Transfer Request Designation**](../core_functions/transfer_request_designation#transfer) web app, for you to assign the transfer to someone.
 
 </CustomDetails>
 
@@ -213,17 +210,13 @@ Selecting the **Item No** will enable the next fields, where applicable. The **I
 
 The **Quantity** will depend on the **Batch/Serial Number** selected.
 
-:::danger[development]
-Currently, there is no validation for the **Quantity** field. For example, if the **Batch/Serial Number** has a maximum number of items of 10, you *can* set the **Quantity** to a value exceding that limit, i.e. 15, but that will give you an error and will not let you continue to the next screen.
-:::
-
-The **Destination Warehouse** value depends on the [Configuration](./putaway.mdx#configuration). Below the **Destination Warehouse**, you will find a **Destination Bin Location** field, only if the **Destination Warehouse** is managed by one.
+The **Destination Warehouse** is the location to where the stock is going to be transferred. Below the **Destination Warehouse**, you will find a **Destination Bin Location** field, only if the **Destination Warehouse** is managed by one.
 
 :::info
 If **putaway_location** is set to **Y**, the **Destination Warehouse** will be the *default* of the item selected, and that will be *mandatory*. If it is set to **N**, the **Destination Warehouse** will need to be selected *manually*. If it is set to **O**, the **Destination Warehouse** will be the *default* of the item selected, and that will be *optional*. This all includes the **Destination Bin Location** as well, if applicable.
 :::
 
-Once you are done, click **Next** to go back to the [Stock Lines](./putaway.mdx#stock-lines) screen.
+Once you are done, click **Next** to go back to the [Stock Lines Summary](./putaway.md#stock-lines) screen.
 
 ## Configuration
 

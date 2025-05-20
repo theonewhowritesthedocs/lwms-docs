@@ -18,8 +18,8 @@ stateDiagram-v2
     state "Select Receive Type" as receivetype2
     state "Select Carrier" as carrier1
     state "Select Carrier" as carrier2
-    state "Select PO/RI" as pori1
-    state "Select PO/RI" as pori2
+    state "Select PO/AP RI" as pori1
+    state "Select PO/AP RI" as pori2
     state "Select Return Request" as rr1
     state "Select Return Request" as rr2
     state "Select Transfer Request" as tr1
@@ -28,7 +28,7 @@ stateDiagram-v2
     state "Create Carrier GRPO" as carriergrpo2
     state "Select Carrier PO" as carrierpo1
     state "Select Carrier PO" as carrierpo2
-    state "Create PO/RI GRPO" as porigrpo
+    state "Create PO/AP RI GRPO" as porigrpo
     state "Create GRPO per Line" as linegrpo1
     state "Create GRPO per Line" as linegrpo2
     state "Execute Return per Line" as return1
@@ -107,7 +107,7 @@ Once you select an option, you will be taken to the respective screen, depending
 ### Carrier Selection
 
 :::info
-This screen is only shown if **Carrier PO requeried PO** is set to **The Carrier PO is the default of Item  (Optional/Mandatory)** in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
+This screen is only shown if **Carrier PO required PO** is set to **The Carrier PO is the default of Item  (Optional/Mandatory)** in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
 :::
 
 On this screen you need to select a **carrier**.
@@ -149,7 +149,7 @@ Once you select a **carrier**, you will be taken to the [Carrier PO/GRPO Selecti
 ### Carrier PO/GRPO Selection
 
 :::info
-This screen is only shown if **Carrier PO requeried PO** is set to **The Carrier PO is the default of Item  (Optional/Mandatory)** in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
+This screen is only shown if **Carrier PO required PO** is set to **The Carrier PO is the default of Item  (Optional/Mandatory)** in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
 :::
 
 On this screen you need to select a **carrier po** associated with the carrier you previously chose, or create a **carrier grpo**.
@@ -246,7 +246,7 @@ Once you are done, click **GRPO** at the bottom to create the **Carrier GRPO** a
 
 ### _Open_ Receive Document Selection
 
-On this screen you need to select either a **Purchase Order**, **Reserve Invoice**, **Return Request**, or **Transfer Request**, depending on the **receive type**. 
+On this screen you need to select either a **Purchase Order**, **A/P Reserve Invoice**, **Return Request**, or **Transfer Request**, depending on the **receive type**. 
 
 You can select from **all open** documents.
 
@@ -268,15 +268,15 @@ The exact screen you will see will depend on the **receive type** you selected.
 
 Click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the search modal for the respective field.
 
-<CustomDetails summary='Purchase Order/Reserve Invoice Search Modal'>
+<CustomDetails summary='Purchase Order/AP Reserve Invoice Search Modal'>
 
-On this modal you need to select one of the **purchase orders/reserve invoices** listed.
+On this modal you need to select one of the **purchase orders/ap reserve invoices** listed.
 
 ![Purchase order/reserve invoice Search modal](./img-shipping-delivery/carrier_po_search_modal.png)
 
-You can select any item by clicking on it, which will close the modal with that **purchase order/reserve invoice** already set.
+You can select any item by clicking on it, which will close the modal with that **purchase order/ap reserve invoice** already set.
 
-You can filter the list of **purchase orders/reserve invoices** using the search box.
+You can filter the list of **purchase orders/ap reserve invoices** using the search box.
 
 If you want to close the modal without making any changes, click the <IIcon icon='zondicons:close-solid' width='17' height='17'/> button.
 
@@ -314,9 +314,9 @@ Once you select a document, you will be taken to the [Line Selection](./receive.
 
 ### _Assigned_ Receive Document Selection
 
-On this screen you need to select either a **Purchase Order**, **Reserve Invoice**, **Return Request**, or **Transfer Request**, depending on the **receive type**. 
+On this screen you need to select either a **Purchase Order**, **A/P Reserve Invoice**, **Return Request**, or **Transfer Request**, depending on the **receive type**. 
 
-You can select from **all open** documents, the **already assigned** to the Carrier PO selected, or **create a PO/RI GRPO** if necessary, depending on the [Configuration](./receive.md#configuration).
+You can select from **all open** documents, the **already assigned** to the Carrier PO selected, or **create a PO/AP RI GRPO** if necessary, depending on the [Configuration](./receive.md#configuration).
 
 The exact screen you will see will depend on the **receive type** you selected.
 
@@ -331,20 +331,20 @@ The exact screen you will see will depend on the **receive type** you selected.
       | Due Date | Date for when the document is to be fulfilled. |
       | Categ. | The category of the document. It can be an Item or a Service. |
     </CustomDetails>
-    If you want to use one the **PO/RIs** currently **assigned** to the **Carrier PO** selected, click any of the rows in the table to go to the [Line Selection](./receive.md#line-selection) screen. <br/><br/>
-    If you want to use a **PO/RI** from the list of **open**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Purchase Order/Reserve Invoice Search** modal.
+    If you want to use one the **PO/AP RIs** currently **assigned** to the **Carrier PO** selected, click any of the rows in the table to go to the [Line Selection](./receive.md#line-selection) screen. <br/><br/>
+    If you want to use a **PO/AP RI** from the list of **open**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Purchase Order/AP Reserve Invoice Search** modal.
     :::info
-    The **Purchase Order/Reserve Invoice** field will only show if the **Carrier PO required PO** option is set to **The Carrier PO is the default of Item (Optional/Mandatory)** in the [Configuration](./receive.md#configuration).
+    The **Purchase Order/AP Reserve Invoice** field will only show if the **Carrier PO required PO** option is set to **The Carrier PO is the default of Item (Optional/Mandatory)** in the [Configuration](./receive.md#configuration).
     :::
-    <CustomDetails summary='Purchase Order/Reserve Invoice Search Modal'>
-    On this modal you need to select one of the **purchase orders/reserve invoices** listed.<br/><br/>
-    ![Purchase order/reserve invoice Search modal](./img-receive/pori_search_modal.png)<br/><br/>
-    You can select any item by clicking on it, which will close the modal with that **purchase order/reserve invoice** already set.<br/><br/>
-    You can filter the list of **purchase orders/reserve invoices** using the search box.<br/><br/>
+    <CustomDetails summary='Purchase Order/AP Reserve Invoice Search Modal'>
+    On this modal you need to select one of the **purchase orders/ap reserve invoices** listed.<br/><br/>
+    ![Purchase order/ap reserve invoice Search modal](./img-receive/pori_search_modal.png)<br/><br/>
+    You can select any item by clicking on it, which will close the modal with that **purchase order/ap reserve invoice** already set.<br/><br/>
+    You can filter the list of **purchase orders/ap reserve invoices** using the search box.<br/><br/>
     If you want to close the modal without making any changes, click the <IIcon icon='zondicons:close-solid' width='17' height='17'/> button.
     </CustomDetails>
-    Once you select a **PO/RI** from the modal, you will be taken to the [Line Selection](./receive.md#line-selection) screen. <br/><br/>
-    If you want to create a **PO/RI GRPO**, click the **Generate GRPO** button to go to the [PO/RI GRPO Creation](./receive.md#pori-grpo-creation) screen.
+    Once you select a **PO/AP RI** from the modal, you will be taken to the [Line Selection](./receive.md#line-selection) screen. <br/><br/>
+    If you want to create a **PO/AP RI GRPO**, click the **Generate GRPO** button to go to the [PO/AP RI GRPO Creation](./receive.md#pori-grpo-creation) screen.
     :::info
     The **Generate GRPO** button will only show if the **Define Active No PO** option is checked in the [Configuration](./receive.md#configuration).
     :::
@@ -399,11 +399,11 @@ The exact screen you will see will depend on the **receive type** you selected.
   </TabItem>
 </Tabs>
 
-### PO/RI GRPO Creation
+### PO/AP RI GRPO Creation
 
-On this screen you need to create a **PO/RI GRPO**. This is an <u>alternative</u> to a **PO/RI**.
+On this screen you need to create a **PO/AP RI GRPO**. This is an <u>alternative</u> to a **PO/AP RI**.
 
-![PO/RI GRPO creation screen](./img-receive/pori_grpo_creation_screen.png)
+![PO/AP RI GRPO creation screen](./img-receive/pori_grpo_creation_screen.png)
 
 Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the fields to open the search modals. You have the **Supplier**, **Item**, **Warehouse** and **Bin Location** search modals.
 
@@ -497,7 +497,7 @@ Next up is the **Quantity**. Set it to the value you see fit.
 
 And last but not least you have the **Remarks**. Use it to leave additional comments.
 
-Once you are done, click **GRPO** at the bottom to create the **PO/RI GRPO** and to go to the [Home](./receive.md#receive-type-selection) screen to log another receiving.
+Once you are done, click **GRPO** at the bottom to create the **PO/AP RI GRPO** and to go to the [Home](./receive.md#receive-type-selection) screen to log another receiving.
 
 ### Line Selection
 
