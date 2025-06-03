@@ -154,14 +154,14 @@ On this modal you can see and update other information on a **sample**.
 You can give a sample up to two release reasons using the **Release 1** and **Release 2** fields.
 
 :::info
-If you set **Release 1** to either **Released**, the sample will be released and removed from the list. You can only release it from here if the sample does not have measurements already saved.
+If you set **Release 1** to **Released**, the sample will be released and removed from the list. You can only release it from here if the sample does not have measurements already saved.
 
-If you set **Release 1** to either **Locked**, the sample will be locked and removed from the list.
+If you set **Release 1** to **Locked**, the sample will be locked and removed from the list.
 :::
 
 **Release 2** can only be checked when **Release 1** is set to **Released.**
 
-Use the **Blockage Reason** field for giving the sample a reason for a blockage by choosing one of the options. For giving it extra comments using the <IIcon icon="ion:information-sharp" width="17" height="17"/> field below it.
+Use the **Blockage Reason** field for giving the sample a reason for a blockage by choosing one of the options. For giving it extra comments use the <IIcon icon="ion:information-sharp" width="17" height="17"/> field below it.
 
 You can also give the sample a **Valuation** from the list of options and extra information.
 
@@ -208,7 +208,7 @@ First, input the result that you got for this test. Use the **Value** field for 
 If you give **OKs** to all the tests for a sample, it will be **released** and removed from the list.
 :::
 
-Use the **Blockage Reason** field for giving the sample a reason for a blockage by choosing one of the options. For giving it extra comments using the <IIcon icon="ion:information-sharp" width="17" height="17"/> field below it.
+Use the **Blockage Reason** field for giving the sample a reason for a blockage by choosing one of the options. For giving it extra comments use the <IIcon icon="ion:information-sharp" width="17" height="17"/> field below it.
 
 :::info
 If you give **Blockage Reasons** to at least one test for a sample, it will be **locked** and removed from the list.
@@ -341,10 +341,6 @@ If you give **OKs** to all the tests for a sample, it will be **released** and r
 :::
 
 Use the **Blockage Reason** field for giving the sample a reason for a blockage by choosing one of the options. For giving it extra comments using the <IIcon icon="ion:information-sharp" width="17" height="17"/> field below it.
-
-:::info
-If you give **Blockage Reasons** to at least one test for a sample, it will be **locked** and removed from the list.
-:::
 
 You can also give the sample a **Valuation** from the list of options and extra information.
 
