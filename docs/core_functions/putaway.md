@@ -220,35 +220,15 @@ Once you are done, click **Next** to go back to the [Stock Lines Summary](./puta
 
 ## Configuration
 
-### Local Configuration
+:::info
+Only administrators can access the configuration for a web app.
+:::
 
-| Id | Description | Type | Values |
-| :--- | :--- | :--- | :--- | 
-| personnel_origin_location | Location linked to personnel ID as the default location | boolean | True or False |
-| putaway_location | Setting to define the putaway location for the item | select | <ul><li>Y : Mandatory</li><li>N : It doesn't set the location </li><li>O : Sets the location, but the user can edit it.</li></ul> |
+On this screen you can set the settings that will apply to this web app.
 
-```json
-[
-    {
-        "id":"personnel_origin_location",
-        "description":"Location linked to personnel ID as the default location",
-        "enable_type":"disabled",
-        "enable_value":true,
-        "type":"boolean",
-        "value":false
-    },
-    {
-        "id":"putaway_location",
-        "description":"Setting to define the putaway location for the item",
-        "enable_type":"disabled",
-        "enable_value":true,
-        "type":"select",
-        "options":[
-            {"id":"Y","description":"The destination location is the default of Item (Mandatory)"},
-            {"id":"O","description":"The destination location is the default of Item (Optional)"},
-            {"id":"N","description":"The destination location is chosen by the user"}
-        ],
-        "value":"O"
-    }
-]
-```
+![Configuration screen](./img-putaway/configuration.png)
+
+| Name | Description |
+| :--- | :--- |
+| Location linked to personnel ID as the default location | If checked, it will prefill the **origin** location with the default location for the personnel. Otherwise, it will leave the **origin location** empty for the user to choose one manually.
+| Setting to define the putaway location for the item | <ol><li>**The destination location is the default of Item (Mandatory):** This will prefill the **destination** location of the item with the default location for the item. The user <u>cannot</u> edit it.</li><li>**The destination location is the default of Item (Optional):** This will prefill the **destination** location of the item with the default location for the item. The user <u>can</u> edit it.</li><li>**The destination location is chosen by the user:** This will leave the **destination location** empty for the user to choose one manually.</li></ol> |
