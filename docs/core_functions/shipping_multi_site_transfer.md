@@ -72,10 +72,6 @@ On this screen you need to select a **carrier**.
 
 ![Carrier selection screen](./img-shipping-multi-site-transfer/carrier_selection_screen.png)
 
-:::danger[development]
-The **Previous** button is always disabled. If you get to this screen from the [Option: Select Carrier](./shipping_multi_site_transfer.md#option-select-carrier) screen, there isn't a way to go back and change the decision made.
-:::
-
 Click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Carrier Search** modal.
 
 <CustomDetails summary='Carrier Search Modal'>
@@ -92,9 +88,9 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 </CustomDetails>
 
-Once you select a **carrier**, you will be taken to the [Carrier Purchase Order Selection](./shipping_multi_site_transfer.md#carrier-purchase-order-selection) screen.
+Once you select a **carrier**, you will be taken to the [Carrier PO Selection](./shipping_multi_site_transfer.md#carrier-po-selection) screen.
 
-### Carrier Purchase Order Selection
+### Carrier PO Selection
 
 On this screen you need to select a **carrier purchase order** associated with the carrier you previously chose.
 
@@ -114,19 +110,13 @@ The exact screen you will see will depend on the **Check if the Transfer Request
 
 ---
 
-:::danger[development]
-Currently, if you select first a **Carrier PO** and then change it to a GRPO, or viceversa, on screen, both the selected Carrier PO and the created GRPO will show, and if you try to select a **Transfer Request**, it will only show the ones assigned to the Carrier PO.
-
-![Error reference screen](./img-shipping-multi-site-transfer/temp_error1.png)
-:::
-
-If you want to use a **Carrier Purchase Order**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Carrier Purchase Order Search** modal.
+If you want to use a **Carrier Purchase Order**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Carrier PO Search** modal.
 
 :::info
 If **Check if the Transfer Request document has a Truck Log linked** <u>is</u> checked in the [Configuration](./shipping_multi_site_transfer.md#configuration), the search results will only include carrier purchase orders that are open <u>and</u> have already checked in.
 :::
 
-<CustomDetails summary='Carrier Purchase Order Search Modal'>
+<CustomDetails summary='Carrier PO Search Modal'>
 
 On this modal you need to select one of the **carrier purchase orders** listed.
 
@@ -142,27 +132,13 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 Once you select a **carrier purchase order**, you will be taken to the [Transfer Request Selection](./shipping_multi_site_transfer.md#transfer-request-selection) screen.
 
-If instead you want to use a **Goods Receipt Purchase Order** <u>and it is available</u>, click the **Generate GRPO** button to go to the [Goods Receipt Purchase Order Generation](./shipping_multi_site_transfer.md#goods-receipt-purchase-order-generation) screen.
+If instead you want to use a **Goods Receipt Purchase Order** <u>and it is available</u>, click the **Generate GRPO** button to go to the [GRPO Creation](./shipping_multi_site_transfer.md#grpo-creation) screen.
 
-:::danger[development]
-Currently, the **Generate GRPO** button takes you to the [Transfer Request](./shipping_multi_site_transfer.md#transfer-request-selection) screen instead.
-:::
-
-### Goods Receipt Purchase Order Generation
-
-:::danger[development]
-Currently, this screen is missing. 
-
-When the user clicks the **Create GRPO button** in the previous screen, the web app automatically creates the **GRPO** and takes them to the [Transfer Request Selection](./shipping_multi_site_transfer.md#transfer-request-selection) screen directly.
-:::
+### GRPO Creation
 
 On this screen you need to create a **GRPO**. This is an <u>alternative</u> to a **Carrier Purchase Order**.
 
-:::warning[documentation]
-Change the image when this screen is added to the web app.
-:::
-
-![Goods Receipt Purchase Order Generation screen](./img-shipping-delivery/grpo_generation_screen.png)
+![GRPO creation screen](./img-shipping-delivery/grpo_generation_screen.png)
 
 The **Carrier Company** comes from the previous screen and the **Item No** comes from the **Item to generate the Carrier Goods Receipt PO** option in the [Configuration](./shipping_multi_site_transfer.md#configuration). These fields <u>are not</u> editable.
 
@@ -186,12 +162,6 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 The **Bin Location** will only be enabled if the **Warehouse** is managed by one. Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the field to open the **Bin Location Search** modal.
 
-:::danger[development]
-<u>**Visual:**</u> Field name. 
-
-**~BinLocation~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Bin Location**.
-:::
-
 <CustomDetails summary="Bin Location Search Modal">
 
 On this screen you need to select one of the **bin locations** listed.
@@ -210,29 +180,11 @@ Next up is the **Batch/Serial Number**. This one is not enabled because for this
 
 <!-- NOTE: When enabled, the batch field allows the user to type in any value and that gives an error later when trying to create the GRPO  -->
 
-:::danger[development]
-The **Batch/Serial Number** should be disabled for this procedure. Currently, it gets enabled after setting the **Warehouse** manually.
-:::
-
 And last but no least you have the **Quantity**. Set it to the value you see fit.
-
-:::danger[development]
-<u>**Visual:**</u> Field name. 
-
-**~quantity~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Quantity**.
-:::
 
 Once you are done, click **Save** at the bottom to create the **Goods Receipt Purchase Order** and to go to the [Transfer Request Selection](./shipping_multi_site_transfer.md#transfer-request-selection) screen.
 
-:::danger[development]
-Cannot create a GRPO unless there is a Batch/Serial Number <u>correctly</u> set.
-:::
-
 ### Transfer Request Selection
-
-:::danger[development]
-This screen does not show if you select a **Carrier PO** that has only one **Transfer Request** assigned. It takes you directly to the [Transfer Request Summary](./shipping_multi_site_transfer.md#transfer-request-summary) screen instead. This is not consistent with other web apps.
-:::
 
 On this screen you need to select a **transfer requests**.
 
@@ -284,12 +236,6 @@ On this screen you can **see** a summary of the information so far and **modify/
 
 ![Transfer request summary and lines screen](./img-shipping-multi-site-transfer/tr_summary_lines_screen.png)
 
-:::danger[development]
-<u>**Visual:**</u> Field name. Summary section for GRPO. 
-
-**~Carrier Good Receipt PO~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Carrier Goods Receipt PO**.
-:::
-
 <CustomDetails summary="Table Reference">
 
 | Column                                                | Description                                                                                                                                               |
@@ -313,25 +259,13 @@ If you want to **modify** a line, click any of the other columns for that line t
 
 Once you are done, click **Next** at the bottom to go to the [Sign, Save and Print](./shipping_multi_site_transfer.md#sign-save-and-print) screen.
 
-:::danger[development]
-When using a **Carrier PO**, the **Previous** button takes you to the [Carrier Purchase Order Selection](./shipping_multi_site_transfer.md#carrier-purchase-order-selection) screen, instead of to the [Transfer Request Selection](./shipping_multi_site_transfer.md#transfer-request-selection) screen, which is supposed to be the previous screen. This happens both for Carrier POs that have only one and multiple Transfer Requests assigned.
-:::
-
 ### Modify Transfer Request Line
 
 On this screen you need to **modify** the necessary information on the line so that it matches what is going to be transferred.
 
 ![Modify transfer request line screen](./img-shipping-multi-site-transfer/modify_tr_line_screen.png)
 
-:::danger[development]
-The vertical scroll does not work as expected. On small-viewport devices like the iPhone SE or the Samsung Galaxy S8+ in the devtools, the screen does not let you see/interact with the **Destination** locations.
-:::
-
 The **Item No** comes from the previously chosen line.
-
-:::danger[development]
-The **Item No** field should not be editable.
-:::
 
 Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the fields to open the search modals. You have the **I-Version**, **Origin Warehouse**, **Origin Bin Location**, **Batch/Serial Number**, **Destination Warehouse**, and **Destination Bin Location**.
 
@@ -376,14 +310,6 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 </CustomDetails>
 
-:::danger[development]
-The **Origin** locations do not get prefilled with the personnel's default location according to the settings in the Configuration.
-:::
-
-:::danger[development]
-The **Destination** locations do not get prefilled with the item's default location according to the settings in the Configuration.
-:::
-
 <CustomDetails summary="Batch/Serial Number Search Modal">
 
 On this screen you need to select one of the **Batches/Serial Numbers** listed.
@@ -427,10 +353,6 @@ Once you have everything that you need, click the <IIcon icon="zondicons:close-s
 
 The **Quantity** will depend on the **Batch/Serial Number** selected. You can select up to that number.
 
-:::danger[development]
-Currently, there is no validation for the **Quantity** field. For example, if the **Batch/Serial Number** has a maximum number of items of 10, you *can* set the **Quantity** to a value exceding that limit, i.e. 15, but that will give you an error later on.
-:::
-
 Once you are done, click **Save** at the bottom to save the changes and to go back to the [Transfer Request Summary](./shipping_multi_site_transfer.md#transfer-request-summary) screen.
 
 ### Sign, Save and Print
@@ -438,16 +360,6 @@ Once you are done, click **Save** at the bottom to save the changes and to go ba
 On this screen you can **confirm** the transfer lines, **sign** the document, **save** it, and **print** it.
 
 ![Sign, save and print screen](./img-shipping-multi-site-transfer/signing_printing_screen.png)
-
-:::danger[development]
-The vertical scroll does not work as expected. On small-viewport devices like the iPhone SE or the Samsung Galaxy S8+ in the devtools, the screen does not let you see/interact with the **Clear Signature** button.
-:::
-
-:::danger[development]
-<u>**Visual:**</u> Field name. Summary section for GRPO. 
-
-**~Carrier Good Receipt PO~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Carrier Goods Receipt PO**.
-:::
 
 <CustomDetails summary="Table Reference">
 
@@ -470,15 +382,7 @@ At the end, you have the option of **printing** the document. Click **Print** at
 
 Once you are done, click **Next** at the bottom to go to one of the home screens, depending on the [Configuration](./shipping_multi_site_transfer.md#configuration), to log another transfer: [Option: Select Carrier](./shipping_multi_site_transfer.md#option-select-carrier), [Carrier Selection](./shipping_multi_site_transfer.md#carrier-selection) or [Transfer Request Selection](./shipping_multi_site_transfer.md#transfer-request-selection).
 
-:::danger[development]
-Currently, after saving the information in the system, if you click **Next**, you will always be taken to the **Carrier Selection** screen, even if the **Select Carrier (Optional)** or **Select Carrier not provided** options are selected in the Configuration, which should take you to the **Option: Select Carrier** and **Transfer Request Selection** screens instead.
-:::
-
 ## Configuration
-
-:::danger[development]
-Currently, all users can access the configuration.
-:::
 
 :::info
 Only administrators can access the configuration for a web app.

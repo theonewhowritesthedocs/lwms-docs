@@ -132,13 +132,13 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 Once you select a **carrier purchase order**, you will be taken to the [Sales Order Selection](./shipping_delivery.md#sales-order-selection) screen.
 
-If instead you want to use a **Goods Receipt Purchase Order** <u>and it is available</u>, click the **Generate GRPO** button to go to the [Goods Receipt Purchase Order Generation](./shipping_delivery.md#goods-receipt-purchase-order-generation) screen.
+If instead you want to use a **Goods Receipt Purchase Order** <u>and it is available</u>, click the **Generate GRPO** button to go to the [GRPO Creation](./shipping_delivery.md#grpo-creation) screen.
 
-### Goods Receipt Purchase Order Generation
+### GRPO Creation
 
 On this screen you need to create a **GRPO**. This is an <u>alternative</u> to a **Carrier Purchase Order**.
 
-![Goods Receipt Purchase Order Generation screen](./img-shipping-delivery/grpo_generation_screen.png)
+![GRPO creation screen](./img-shipping-delivery/grpo_generation_screen.png)
 
 The **Carrier Company** comes from the previous screen and the **Item No** comes from the **Item to generate the Carrier PO** option in the [Configuration](./shipping_delivery.md#configuration). These fields <u>are not</u> editable.
 
@@ -162,12 +162,6 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 The **Bin Location** will only be enabled if the **Warehouse** is managed by one. Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the field to open the **Bin Location Search** modal.
 
-:::danger[development]
-<u>**Visual:**</u> Field name. 
-
-**~BinLocation~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Bin Location**.
-:::
-
 <CustomDetails summary="Bin Location Search Modal">
 
 On this screen you need to select one of the **bin locations** listed.
@@ -186,23 +180,9 @@ Next up is the **Batch/Serial Number**. This one is not enabled because for this
 
 <!-- NOTE: When enabled, the batch field allows the user to type in any value and that gives an error later when trying to create the GRPO  -->
 
-:::danger[development]
-The **Batch/Serial Number** should be disabled for this procedure. Currently, it gets enabled after setting the **Warehouse** manually.
-:::
-
 And last but no least we have the **Quantity**. Set it to the value you see fit.
 
-:::danger[development]
-<u>**Visual:**</u> Field name. 
-
-**~quantity~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Quantity**.
-:::
-
 Once you are done, click **Save** at the bottom to create the **Goods Receipt Purchase Order** and to go to the [Sales Order Selection](./shipping_delivery.md#sales-order-selection) screen.
-
-:::danger[development]
-Cannot create a GRPO unless there is a Batch/Serial Number <u>correctly</u> set.
-:::
 
 ### Sales Order Selection
 
@@ -254,17 +234,7 @@ Once you select a **sales order**, you will be taken to the [Sales Order Summary
 
 On this screen you can **see** a summary of the information so far and **modify/select** sales order lines for delivery.
 
-:::danger[development]
-If you create a GRPO instead of selecting a Carrier PO, the summary section on the top does not show the **Carrier Company** and the **GRPO**.
-:::
-
 ![Sales order summary and lines screen](./img-shipping-delivery/so_summary_lines_screem.png)
-
-:::danger[development]
-<u>**Visual:**</u> Field name. 
-
-**~Carrier purchase order~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Carrier Purchase Order**.
-:::
 
 <CustomDetails summary="Table Reference">
 
@@ -279,23 +249,7 @@ If you create a GRPO instead of selecting a Carrier PO, the summary section on t
 
 </CustomDetails>
 
-:::danger[development]
-<u>**Visual:**</u> Column name. 
-
-**~DueDate~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Due Date**.
-:::
-
-:::danger[development]
-The **Whs** column does not show the **Bin Location** when one is selected.
-:::
-
 In order to continue to the next screen, you need to check at least one line from the sales order. If it does not let you select them, that means you need to modify some information in them for them to be applicable for delivery.
-
-:::danger[development]
-<u>**Visual:**</u> Section name. 
-
-**~Sales order Lines~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Sales Order Lines**.
-:::
 
 You can **filter** the list of lines using the search box.
 
@@ -328,18 +282,6 @@ You can filter the list of **I-Versions** using the search box.
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
 </CustomDetails>
 
-:::danger[development]
-<u>**Visual:**</u> Field name. 
-
-**~Iversion~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **I-Version**.
-:::
-
-:::danger[development]
-<u>**Visual:**</u> Field state. 
-
-The **I-Version** field is not disabled when the item does not have said attribute, it's just read-only.
-:::
-
 <CustomDetails summary="Warehouse Search Modal">
 
 On this screen you need to select one of the **warehouses** listed.
@@ -367,12 +309,6 @@ You can filter the list of **bin locations** using the search box.
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
 
 </CustomDetails>
-
-:::danger[development]
-<u>**Visual:**</u> Field name. 
-
-**~BinLocation~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Bin Location**.
-:::
 
 <CustomDetails summary="Batch/Serial Number Search Modal">
 
@@ -415,18 +351,6 @@ Once you have everything that you need, click the <IIcon icon="zondicons:close-s
 
 </CustomDetails>
 
-The **Quantity** will depend on the **Batch/Serial Number** selected. You can select up to that number.
-
-:::danger[development]
-<u>**Visual:**</u> Field name. 
-
-**~quantity to deliver~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Quantity**.
-:::
-
-:::danger[development]
-Currently, there is no validation for the **Quantity** field. For example, if the **Batch/Serial Number** has a maximum number of items of 10, you *can* set the **Quantity** to a value exceding that limit, i.e. 15, but that will give you an error later on.
-:::
-
 Once you are done, click **Save** at the bottom to save the changes and to go back to the [Sales Order Summary](./shipping_delivery.md#sales-order-summary) screen.
 
 ### Sign, Save and Print
@@ -434,12 +358,6 @@ Once you are done, click **Save** at the bottom to save the changes and to go ba
 On this screen you can **confirm** the delivery lines, **sign** the document, **save** it, and **print** it.
 
 ![Sign, save and print screen](./img-shipping-delivery/signing_printing_screen.png)
-
-:::danger[development]
-<u>**Visual:**</u> Field name. 
-
-**~Carrier purchase order~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Carrier Purchase Order**.
-:::
 
 <CustomDetails summary="Table Reference">
 
@@ -452,16 +370,6 @@ On this screen you can **confirm** the delivery lines, **sign** the document, **
 | Due Date                                              | Date for when the line is supposed to be delivered.                                                                                                      |
 </CustomDetails>
 
-:::danger[development]
-<u>**Visual:**</u> Column name. 
-
-**~DueDate~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Due Date**.
-:::
-
-:::danger[development]
-The **Whs** column does not show the **Bin Location** when one is selected.
-:::
-
 If the information on the screen is correct, sign the document in the **Driver Signature** section.
 
 You can erase the signature by clicking the **Clear Signature** button.
@@ -472,15 +380,7 @@ At the end, you have the option of **printing** the document. Click **Print** at
 
 Once you are done, click **Next** at the bottom to go to the [Home](./shipping_delivery.md#option-select-carrier) screen to log another delivery.
 
-:::danger[development]
-Currently, if after saving the information in the system you click **Previous** and then click **Next** from the previous screen, you will be taken to the **Home** screen, instead of to the **Signing and Printing** screen.
-:::
-
 ## Configuration
-
-:::danger[development]
-Currently, all users can access the configuration.
-:::
 
 :::info
 Only administrators can access the configuration for a web app.
@@ -489,10 +389,6 @@ Only administrators can access the configuration for a web app.
 On this screen you can set the settings that will apply to this web app.
 
 ![Configuration screen](./img-shipping-delivery/configuration.png)
-
-:::danger[development]
-The search modal for the **Item to generate the Carrier PO** field does not find the **CARRIER-SERVICE** item.
-:::
 
 | Name | Description |
 | :--- | :--- |
