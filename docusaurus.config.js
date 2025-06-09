@@ -86,12 +86,21 @@ const config = {
           src: "img/light_wms_icon.svg",
         },
         items: [
-          {
-            type: "docSidebar",
-            sidebarId: "docSidebar",
-            position: "left",
-            label: "Documentation",
-          },
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "docSidebar",
+          //   position: "left",
+          //   label: "Documentation",
+          // },
+          {to: '/docs/intro', label: 'Introduction', position: 'left'},
+          {to: '/docs/category/definitions', label: 'Definitions', position: 'left'},
+          {to: '/docs/category/master-data', label: 'Master Data', position: 'left'},
+          {to: '/docs/category/core-functions-web-apps', label: 'Web Apps', position: 'left'},
+          // {
+          //   href: 'https://github.com/facebook/docusaurus',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
           // {to: '/blog', label: 'Blog', position: 'left'},#ecf0f1
           // {
           //   href: 'https://github.com/facebook/docusaurus',
