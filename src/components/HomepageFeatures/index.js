@@ -1,64 +1,119 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Intra-Site Transfer',
+    url: '/docs/apps/putaway',
+    Svg: require('@site/static/img/putaway.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Transfer stock from one warehouse to another.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Transfer Request Designation',
+    url: '/docs/apps/transfer_request_designation',
+    Svg: require('@site/static/img/designation.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Assign a transfer request to someone.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Inspection',
+    url: '/docs/apps/inspection',
+    Svg: require('@site/static/img/inspection.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Log the results of quality checks on a production order.
+      </>
+    ),
+  },
+  {
+    title: 'Shipping Delivery',
+    url: '/docs/apps/shipping_delivery',
+    Svg: require('@site/static/img/delivery.svg').default,
+    description: (
+      <>
+        Log the necessary information when delivering sales orders.
+      </>
+    ),
+  },
+  {
+    title: 'Shipping Multi-Site Transfer',
+    url: '/docs/apps/shipping_multi_site_transfer',
+    Svg: require('@site/static/img/putaway.svg').default,
+    description: (
+      <>
+        Log the necessary information when transfering stock.
+      </>
+    ),
+  },
+  {
+    title: 'Receive',
+    url: '/docs/apps/receive',
+    Svg: require('@site/static/img/receive.svg').default,
+    description: (
+      <>
+        Log the necessary information when receiving inventory.
+      </>
+    ),
+  },
+  {
+    title: 'Truck CheckIn',
+    url: '/docs/apps/truck_checkin',
+    Svg: require('@site/static/img/checkin.svg').default,
+    description: (
+      <>
+        Log the entrance of a truck and its reason.
+      </>
+    ),
+  },
+  {
+    title: 'Truck CheckOut',
+    url: '/docs/apps/truck_checkout',
+    Svg: require('@site/static/img/checkout.svg').default,
+    description: (
+      <>
+        Log the departure of a truck and its reason.
+      </>
+    ),
+  },
+  {
+    title: 'Truck Inspect',
+    url: '/docs/apps/truck_inspect',
+    Svg: require('@site/static/img/truck-inspect.svg').default,
+    description: (
+      <>
+        Log the results of quality checks on a truck.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description, url }) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
+    <Link className="feature" to={url}>
+        <Svg className="feature-svg" />
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
-      </div>
-    </div>
+    </Link>
   );
 }
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <>
+      <section className="features">
+        {FeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} />
+        ))}
+      </section>
+    </>
   );
 }

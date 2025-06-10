@@ -15,6 +15,6 @@ sidebar_position: 5
 
 ## References
 
-- [Putaway.](/docs/core_functions/putaway)
-- [Shipping Multi-Site Transfer.](/docs/core_functions/shipping_multi_site_transfer)
-- [Receive.](/docs/core_functions/receive)
+- [Putaway.](/docs/apps/putaway)
+- [Shipping Multi-Site Transfer.](/docs/apps/shipping_multi_site_transfer)
+- [Receive.](/docs/apps/receive)

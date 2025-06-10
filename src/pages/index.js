@@ -10,18 +10,22 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx(styles.heroBanner)}>
       <div className="container">
+        {/* <Heading as="h1" className="hero__title">
+          Light WMS
+        </Heading> */}
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+          Documentation
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">Are you looking for something in specific?</p>
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
+          <input type="text" className={styles.searchbox}/>
+          {/* <Link
+            className={styles.button}
             to="/docs/intro">
-            Go to Documentation 📖
-          </Link>
+            Documentation
+          </Link> */}
         </div>
       </div>
     </header>
@@ -32,8 +36,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={siteConfig.title}
+      description="TODO">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

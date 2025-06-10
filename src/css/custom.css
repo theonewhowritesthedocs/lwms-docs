@@ -19,6 +19,9 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
+  --ifm-background-color: red; /* Main background */
+  --ifm-background-surface-color: red; /* Cards, sidebars */
+
   --ifm-color-primary: #128fff;
   --ifm-color-primary-dark: #08477F;
   --ifm-color-primary-darker: #053764;
@@ -56,6 +59,83 @@ html[data-theme='dark'] .theme-admonition-warning {
   border-left: 8px solid var(--ifm-color-warning);
 }
 
+html[data-theme='dark'] body {
+  background-color: transparent;
+}
+
+html[data-theme='dark'] .navbar {
+  background-color: #000;
+}
+
+html[data-theme='dark'] {
+  background-color: #000;
+  color: #fff !important;
+}
+
 .markdown svg {
   margin-bottom: -2px;
+}
+
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  /* align-items: center; */
+  padding: 2rem 50px;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+.feature {
+  border: 1px solid #c2c2c2;
+  border-radius: 15px;
+  text-align: center;
+  padding: 20px;
+  width: 400px;
+  color: #c2c2c2;
+  text-decoration: none;
+}
+
+.feature:hover {
+  color: inherit;
+  text-decoration: none;
+  border-color: #fff;
+}
+
+.feature:hover > svg > path {
+  fill: #fff;
+}
+
+.feature > p {
+  margin: 0px;
+}
+
+.feature-svg {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  /* padding: 5px;
+  border: 1px solid #c2c2c2;
+  border-radius: 15px; */
+}
+
+.feature-svg > path {
+  fill: #c2c2c2;
+}
+
+.shortcuts-header-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.shortcuts-header-container > span {
+  font-size: 1.8rem;
+  font-weight: 600;
 }

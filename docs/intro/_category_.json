@@ -1,0 +1,8 @@
+{
+    "label": "Introduction",
+    "position": 1,
+    "link": {
+      "type": "generated-index",
+      "description": "TODO: **An introduction describing how Webapps, masterdata, configuration, etc. work.**"
+    }
+}

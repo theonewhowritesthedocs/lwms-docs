@@ -28,6 +28,6 @@ In contrast with a regular PO, a carrier PO can have a variety of documents assi
 
 ## References
 
-- [Shipping Delivery.](/docs/core_functions/shipping_delivery)
-- [Shipping Multi-Site Transfer.](/docs/core_functions/shipping_multi_site_transfer)
-- [Receive.](/docs/core_functions/receive)
+- [Shipping Delivery.](/docs/apps/shipping_delivery)
+- [Shipping Multi-Site Transfer.](/docs/apps/shipping_multi_site_transfer)
+- [Receive.](/docs/apps/receive)

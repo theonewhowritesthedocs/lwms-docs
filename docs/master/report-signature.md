@@ -26,7 +26,7 @@ Table **LWMS_DOC_ATTACH**.
 
 # References
 
-- [Inspection.](/docs/core_functions/inspection)
-- [Shipping Delivery.](/docs/core_functions/shipping_delivery)
-- [Shipping Multi-Site Transfer.](/docs/core_functions/shipping_multi_site_transfer)
-- [Receive.](/docs/core_functions/receive)
+- [Inspection.](/docs/apps/inspection)
+- [Shipping Delivery.](/docs/apps/shipping_delivery)
+- [Shipping Multi-Site Transfer.](/docs/apps/shipping_multi_site_transfer)
+- [Receive.](/docs/apps/receive)

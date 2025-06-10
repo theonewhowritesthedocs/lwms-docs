@@ -1,0 +1,8 @@
+{
+    "label": "Master Data",
+    "position": 3,
+    "link": {
+      "type": "generated-index",
+      "description": "Master Data required for the operation of Light WMS."
+    }
+}

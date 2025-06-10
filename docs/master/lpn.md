@@ -115,7 +115,7 @@ Table **LWMS_PLATING_RES**.
 
 ## References
 
-- [Putaway.](/docs/core_functions/putaway)
-- [Shipping Delivery.](/docs/core_functions/shipping_delivery)
-- [Shipping Multi-Site Transfer.](/docs/core_functions/shipping_multi_site_transfer)
-- [Receive.](/docs/core_functions/receive)
+- [Putaway.](/docs/apps/putaway)
+- [Shipping Delivery.](/docs/apps/shipping_delivery)
+- [Shipping Multi-Site Transfer.](/docs/apps/shipping_multi_site_transfer)
+- [Receive.](/docs/apps/receive)
