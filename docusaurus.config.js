@@ -80,23 +80,23 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        hideOnScroll: true,
+        hideOnScroll: false,
         title: "Light WMS",
         logo: {
           alt: "Light WMS Logo",
           src: "img/light_wms_icon.svg",
         },
         items: [
-          {
-            type: "docSidebar",
-            sidebarId: "docSidebar",
-            position: "left",
-            label: "Documentation",
-          },
-          // {to: '/docs/category/introduction', label: 'Introduction', position: 'left'},
-          // {to: '/docs/category/definitions', label: 'Definitions', position: 'left'},
-          // {to: '/docs/category/master-data', label: 'Master Data', position: 'left'},
-          // {to: '/docs/category/web-apps', label: 'Web Apps', position: 'left'},
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "docSidebar",
+          //   position: "left",
+          //   label: "Documentation",
+          // },
+          {to: '/docs/category/introduction', label: 'Introduction', position: 'right'},
+          {to: '/docs/category/definitions', label: 'Definitions', position: 'right'},
+          {to: '/docs/category/master-data', label: 'Master Data', position: 'right'},
+          {to: '/docs/category/web-apps', label: 'Web Apps', position: 'right'},
           // {
           //   href: 'https://github.com/facebook/docusaurus',
           //   label: 'GitHub',

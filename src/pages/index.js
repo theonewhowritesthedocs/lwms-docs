@@ -18,9 +18,9 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           Documentation
         </Heading>
-        <p className="hero__subtitle">Are you looking for something in specific?</p>
+        <p className="hero__subtitle">This is the documentation for the <strong>Light WMS</strong> ecosystem.</p>
         <div className={styles.buttons}>
-          <input type="text" className={styles.searchbox}/>
+          {/* <input type="text" className={styles.searchbox}/> */}
           {/* <Link
             className={styles.button}
             to="/docs/intro">

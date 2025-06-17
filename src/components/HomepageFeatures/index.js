@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'Intra-Site Transfer',
+    title: 'Putaway',
     url: '/docs/apps/putaway',
     Svg: require('@site/static/img/putaway.svg').default,
     description: (
@@ -109,6 +109,7 @@ function Feature({ Svg, title, description, url }) {
 export default function HomepageFeatures() {
   return (
     <>
+      <div className='features-label'><span>Shortcuts</span></div>
       <section className="features">
         {FeatureList.map((props, idx) => (
           <Feature key={idx} {...props} />

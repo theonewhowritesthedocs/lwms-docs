@@ -76,6 +76,25 @@ html[data-theme='dark'] {
   margin-bottom: -2px;
 }
 
+.navbar {
+  box-shadow: none;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.main-wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.menu.thin-scrollbar {
+  padding-left: 0px;
+}
+
+.menu__link {
+  padding-left: 0px;
+}
 
 .features {
   display: flex;
@@ -83,8 +102,13 @@ html[data-theme='dark'] {
   justify-content: center;
   gap: 20px;
   /* align-items: center; */
-  padding: 2rem 50px;
-  width: 100%;
+  padding: 2rem 0px;
+}
+
+.features-label {
+  margin-top: 30px;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .featureSvg {
@@ -93,6 +117,17 @@ html[data-theme='dark'] {
 }
 
 .feature {
+  border: 1px solid #000;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  flex: 1 1 0;
+  min-width: 400px;
+  color: #000;
+  text-decoration: none;
+}
+
+html[data-theme='dark'] .feature {
   border: 1px solid #c2c2c2;
   border-radius: 15px;
   text-align: center;
@@ -102,14 +137,25 @@ html[data-theme='dark'] {
   text-decoration: none;
 }
 
-.feature:hover {
-  color: inherit;
+.feature:hover{
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+  text-decoration: none;
+}
+
+.feature:hover .feature-svg > path {
+  fill: #fff;
+}
+
+html[data-theme='dark'] .feature:hover {
+  color: white;
   text-decoration: none;
   border-color: #fff;
 }
 
 .feature:hover > svg > path {
-  fill: #fff;
+  fill: #000;
 }
 
 .feature > p {
@@ -126,7 +172,22 @@ html[data-theme='dark'] {
 }
 
 .feature-svg > path {
-  fill: #c2c2c2;
+  fill: #000;
+}
+
+html[data-theme='dark'] .feature-svg > path {
+  fill: #fff;
+}
+
+html[data-theme='dark'] .feature:hover {
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  border-color: #000;
+}
+
+html[data-theme='dark'] .feature:hover .feature-svg > path {
+  fill: #000;
 }
 
 .shortcuts-header-container {
@@ -138,4 +199,22 @@ html[data-theme='dark'] {
 .shortcuts-header-container > span {
   font-size: 1.8rem;
   font-weight: 600;
+}
+
+.footer {
+  display: none;
+}
+
+@media screen and (min-width: 996px) {
+  .heroBanner {
+    width: 100%;
+    border-radius: 0%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .heroBanner {
+    width: 100%;
+    border-radius: 0%;
+  }
 }
