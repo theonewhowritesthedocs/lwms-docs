@@ -234,7 +234,9 @@ Once you select a **sales order**, you will be taken to the [Sales Order Summary
 
 On this screen you can **see** a summary of the information so far and **modify/select** sales order lines for delivery.
 
-![Sales order summary and lines screen](./img-shipping-delivery/so_summary_lines_screem.png)
+At the top you will see a summary of everything you have selected so far, so it may vary.
+
+![Sales order summary and lines screen](./img-shipping-delivery/so_summary_lines_screen.png)
 
 <CustomDetails summary="Table Reference">
 
@@ -263,11 +265,20 @@ Once you are done, click **Next** at the bottom to go to the [Sign, Save and Pri
 
 On this screen you need to **modify** the necessary information on the line so that it matches what is going to be delivered.
 
-![Modify sales order line screen](./img-shipping-delivery/modify_so_line_screen.png)
+You can use individual stock and/or you can select stock that is linked to **License Plate Numbers (LPN)**.
+
+<Tabs>
+  <TabItem value="inventory" label="Inventory" default>
+    ![Truck-log-enabled Carrier Purchase Order Screen](./img-shipping-delivery/modify_so_line_inventory_screen.png)
+  </TabItem>
+  <TabItem value="lpn" label="License Plate">
+    ![Truck-log-disabled Carrier Purchase Order Screen](./img-shipping-delivery/modify_so_line_lpn_screen.png)
+  </TabItem>
+</Tabs>
 
 The **Item No** comes from the previously chosen line.
 
-Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the fields to open the search modals. You have the ****I-Version**, **Warehouse**, **Bin Location** and **Batch/Serial Number**.
+Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the fields to open the search modals. You have the **I-Version**, **Warehouse** and **Bin Location**.
 
 <CustomDetails summary="I-Version Search Modal">
 
@@ -310,11 +321,15 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 </CustomDetails>
 
+Now, if you want to select individual stock <u>not</u> linked to **LPN**s, make sure you are in the **Inventory** tab.
+
+You can select one or multiple batch/serial numbers. For selecting only one, click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on that field to open the **Batch/Serial Number Search** modal.
+
 <CustomDetails summary="Batch/Serial Number Search Modal">
 
 On this screen you need to select one of the **Batches/Serial Numbers** listed.
 
-![Batch search modal](./img-putaway/popup_batch_search.png)
+![Batch search modal](./img-shipping-delivery/popup_batch_search.png)
 
 You can select any item by clicking on it, which will close the modal and take you back with that **Batch/Serial Number** already set.
 
@@ -323,7 +338,7 @@ You can filter the list of **Batches/Serial Numbers** using the search box.
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
 </CustomDetails>
 
-Click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on the **Batch/Serial Number** field to open the **Batches/Serial Numbers: Extended Information** modal.
+If you want to select more than one batch/serial number, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on the **Batch/Serial Number** field to open the **Batches/Serial Numbers: Extended Information** modal.
 
 <CustomDetails summary="Batches/Serial Numbers: Extended Information">
 
@@ -351,11 +366,67 @@ Once you have everything that you need, click the <IIcon icon="zondicons:close-s
 
 </CustomDetails>
 
-Once you are done, click **Save** at the bottom to save the changes and to go back to the [Sales Order Summary](./shipping_delivery.md#sales-order-summary) screen.
+On the other hand, if you want to select stock that is linked to **LPN**s, make sure you are in the **License Plate** tab. 
+
+From there, for selecting LPN stock you first need to find an LPN. Click **Select** to open the **License Plate Stock Selection** modal.
+
+<CustomDetails summary="License Plate Stock Selection Modal">
+
+On this modal you need to find an LPN and select stock from it with a set quantity.
+
+![License plate stock selection add first modal](./img-shipping-delivery/lp_stock_selection_add_first_modal.png)
+
+Click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **License Plate Search** modal.
+
+<CustomDetails summary="License Plate Search Modal">
+
+On this screen you need to select one of the **License Plates** listed.
+
+![License plate search modal](./img-shipping-delivery/license_plate_search_modal.png)
+
+You can select any item by clicking on it, which will close the modal and take you back with that **License Plate** already set.
+
+You can filter the list of **License Plates** using the search box.
+
+If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
+</CustomDetails>
+
+After you select a License Plate, you will be taken back to select the specific stock with the quantity you want from it.
+
+![License plate stock selection select stock and quantity modal](./img-shipping-delivery/lp_stock_selection_stock_quantity_modal.png)
+
+<CustomDetails summary="Table Reference">
+| Column | Description |
+| --- | --- |
+| <IIcon icon="line-md:square" width="17" height="17"/> | Action button for selecting stock lines. |
+| Item | ID of the item. Name of the item. Batch/Serial number. |
+| Location | Warehouse from where the item will be taken.|
+| Select Qty | Quantity that will be taken of that item. |
+| Actual Qty | Total quantity the item has on system. |
+</CustomDetails>
+
+Set the **Select Qty** field to the quantity you need from the item. Then select the item by clicking the <IIcon icon="gg:check-r" width="17" height="17" /> button in the first column of the table for that item.
+
+Once you are done, click **Next** at the bottom to go to the **Summary/Add More** section.
+
+![License plate stock selection add more modal](./img-shipping-delivery/lp_stock_selection_add_more_modal.png)
+
+You can filter the list of **LPNs** using the search box at the top.
+
+You can **unselect** any of the LPNs listed by clicking the <IIcon icon="ic:baseline-delete" width="17" height="17" /> button on the rightmost column.
+
+You can **edit** the stock for any of the LPNs by clicking on them.
+
+Once you are done, save the changes by clicking the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button to close the modal and go back.
+</CustomDetails>
+
+If you have selected everything that you need, click **Save** at the bottom to save the changes and to go back to the [Sales Order Summary](./shipping_delivery.md#sales-order-summary) screen.
 
 ### Sign, Save and Print
 
-On this screen you can **confirm** the delivery lines, **sign** the document, **save** it, and **print** it.
+On this screen you can **confirm** the delivery lines, **answer** some QC questions, **sign** the document, **save** it, **print** it and **attach** some pictures if you need.
+
+At the top you will see a summary of everything you have selected so far, so it may vary.
 
 ![Sign, save and print screen](./img-shipping-delivery/signing_printing_screen.png)
 
@@ -370,13 +441,47 @@ On this screen you can **confirm** the delivery lines, **sign** the document, **
 | Due Date                                              | Date for when the line is supposed to be delivered.                                                                                                      |
 </CustomDetails>
 
-If the information on the screen is correct, sign the document in the **Driver Signature** section.
+Answer the questions in the **Quick QC** section. Questions with <span style={{color: "red"}}>*</span> are **mandatory**.
+
+If the information on the screen is correct up to this point, sign the document in the **Driver Signature** section.
 
 You can erase the signature by clicking the **Clear Signature** button.
 
-Next up is saving the information for the delivery in the system, click **Save** at the bottom for that.
+Next up is saving the information in the system, click **Save** at the bottom for that. 
 
-At the end, you have the option of **printing** the document. Click **Print** at the bottom to generate a PDF with the information for the delivery and the signature.
+:::info
+Saving will create a **Delivery** document in SAP.
+:::
+
+At the end, you have the option of **printing** the document and **attaching** pictures. 
+
+Click **Print** at the bottom to generate a PDF with the information for the delivery and the signature.
+
+:::info
+The PDFs are saved in the **Report** folder for the project.
+:::
+
+You can also attach pictures as proof for eveything that was done. For that, click the <IIcon icon="mdi:camera" width="17" height="17"/> button at the bottom to open the **Add Picture** modal.
+
+<CustomDetails summary="Add Picture Modal">
+
+On this modal you can **attach a picture** and link it to the delivery.
+
+First, you need to give the picture a name and then click **Confirm**.
+
+![Photo title modal](./img-shipping-delivery/photo_title_modal.png)
+
+After that, you need to choose a device for taking the picture from the list of available options. Then, click **Take Photo** to take it and save it.
+
+![Take photo modal](./img-shipping-delivery/take_photo_modal.png)
+
+If you want to close any of the modals without saving anything, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> or **Cancel** buttons.
+
+</CustomDetails>
+
+:::info
+All pictures are listed in the **Attachments** tab for each **Delivery** document in SAP.
+:::
 
 Once you are done, click **Next** at the bottom to go to the [Home](./shipping_delivery.md#option-select-carrier) screen to log another delivery.
 
@@ -396,3 +501,4 @@ On this screen you can set the settings that will apply to this web app.
 | Location linked to personnel ID as the default location | If checked, all item locations will be prefilled with the location the personnel has. Otherwise, all item locations will be prefilled with the location the item has. |
 | Setting to allow to identify carrier | From this option will depend the first screen of the web app. You have three options: <br/> <br/> <ol><li>**Select Carrier (Mandatory):** This will make the user select a carrier for the process.</li><li>**Select Carrier (Optional):** This will give the user the option of choosing if they want to select a carrier or not.</li><li>**Select Carrier Not Provided:** This will skip the screen for selecting a carrier and will let the user select a sales order directly.</li></ol> |
 | Item to generate the Carrier PO | Here you can set the item that will be used when creating a GRPO. It can only be changed here. |
+| Personalized questions | You can configure up to ten (10) questions to be shown to users as a sort of truck quality control. You can set the label, if its going to be shown (Enable), and if it's going to be required to continue with the process (Mandatory). |
