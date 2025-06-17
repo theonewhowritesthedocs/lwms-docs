@@ -4,7 +4,7 @@ sidebar_position: 1
 
 import CustomDetails from "@site/src/components/CustomDetails";
 
-# Intra-Site Transfer (Putaway)
+# Putaway
 
 The Intra-Site Transfer (Putaway) WebApp allows you to transfer stock from one warehouse to another and/or from one bin to another, by either Executing a Transfer directly or by Generating a Transfer Request that will later be revised and approved/rejected.
 
