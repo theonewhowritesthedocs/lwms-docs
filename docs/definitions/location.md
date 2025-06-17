@@ -6,7 +6,7 @@ sidebar_position: 1
 
 The location means the Warehouse Code & BIN (if any) information where the stock resides in the inventory.
 
-:::info
+:::note[INFO]
 BIN can be a single bin or sub-levels. [Help documentation in SBO](https://help.sap.com/docs/SAP_BUSINESS_ONE/68a2e87fb29941b5bf959a184d9c6727/0330174eeddf4eccbe1e3cd2ec041923.html?locale=en-US).
 :::
 

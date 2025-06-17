@@ -60,7 +60,7 @@ At the top you see a summary  of what you are working with.
 
 Click **Next** at the bottom to complete the check-out process. After that, you have a the same screen as a summary, you can click **Next** again to go to the [Home](./truck_checkin.md#carrier-selection) screen.
 
-:::info
+:::note[INFO]
 Completing the check-out process will change the status of the QC Order/Truck Log to **CheckOut**.
 :::
 

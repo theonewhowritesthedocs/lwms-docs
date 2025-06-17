@@ -106,7 +106,7 @@ Once you select an option, you will be taken to the respective screen, depending
 
 ### Carrier Selection
 
-:::info
+:::note[INFO]
 This screen is only shown if **Carrier PO required PO** is set to **The Carrier PO is the default of Item  (Optional/Mandatory)** in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
 :::
 
@@ -148,7 +148,7 @@ Once you select a **carrier**, you will be taken to the [Carrier PO/GRPO Selecti
 
 ### Carrier PO/GRPO Selection
 
-:::info
+:::note[INFO]
 This screen is only shown if **Carrier PO required PO** is set to **The Carrier PO is the default of Item  (Optional/Mandatory)** in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
 :::
 
@@ -172,7 +172,7 @@ The exact screen you will see will depend on the **receive type**.
 
 If you want to use a **Carrier PO**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Carrier Purchase Order Search** modal.
 
-:::info
+:::note[INFO]
 If **Truck Log Enabled or Disabled** <u>is</u> checked in the [Configuration](./receive.md#configuration), the search results will only include carrier purchase orders that are open <u>and</u> have already checked in.
 :::
 
@@ -194,7 +194,7 @@ Once you select a **carrier po**, you will be taken to the [_Assigned_ Receive D
 
 If instead you want to create and use a **carrier grpo**, click the **Generate Carrier GRPO** button to go to the [Carrier GRPO Creation](./receive.md#carrier-grpo-creation) screen.
 
-:::info
+:::note[INFO]
 If **Truck Log Enabled or Disabled** <u>is</u> checked in the [Configuration](./receive.md#configuration), the **Generate Carrier GRPO** button will not be available.
 :::
 
@@ -333,7 +333,7 @@ The exact screen you will see will depend on the **receive type** you selected.
     </CustomDetails>
     If you want to use one the **PO/AP RIs** currently **assigned** to the **Carrier PO** selected, click any of the rows in the table to go to the [Line Selection](./receive.md#line-selection) screen. <br/><br/>
     If you want to use a **PO/AP RI** from the list of **open**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Purchase Order/AP Reserve Invoice Search** modal.
-    :::info
+    :::note[INFO]
     The **Purchase Order/AP Reserve Invoice** field will only show if the **Carrier PO required PO** option is set to **The Carrier PO is the default of Item (Optional/Mandatory)** in the [Configuration](./receive.md#configuration).
     :::
     <CustomDetails summary='Purchase Order/AP Reserve Invoice Search Modal'>
@@ -345,7 +345,7 @@ The exact screen you will see will depend on the **receive type** you selected.
     </CustomDetails>
     Once you select a **PO/AP RI** from the modal, you will be taken to the [Line Selection](./receive.md#line-selection) screen. <br/><br/>
     If you want to create a **PO/AP RI GRPO**, click the **Generate GRPO** button to go to the [PO/AP RI GRPO Creation](./receive.md#pori-grpo-creation) screen.
-    :::info
+    :::note[INFO]
     The **Generate GRPO** button will only show if the **Define Active No PO** option is checked in the [Configuration](./receive.md#configuration).
     :::
   </TabItem>
@@ -360,7 +360,7 @@ The exact screen you will see will depend on the **receive type** you selected.
     </CustomDetails>
     If you want to use one the **Return Requests** currently **assigned** to the **Carrier PO** selected, click any of the rows in the table to go to the [Line Selection](./receive.md#line-selection) screen.<br/><br/>
     If you want to use a **Return Request** from the list of **open**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Return Request Search** modal.
-    :::info
+    :::note[INFO]
     The **Return Request** field will only show if the **Carrier PO required RMA** option is set to **The Carrier PO is the default of Item (Optional/Mandatory)** in the [Configuration](./receive.md#configuration).
     :::
     <CustomDetails summary="Return Request Search Modal">
@@ -385,7 +385,7 @@ The exact screen you will see will depend on the **receive type** you selected.
     </CustomDetails>
     If you want to use one the **Transfer Requests** currently **assigned** to the **Carrier PO** selected, click any of the rows in the table to go to the [Line Selection](./receive.md#line-selection) screen.<br/><br/>
     If you want to use a **Transfer Request** from the list of **open**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Transfer Request Search** modal.
-    :::info
+    :::note[INFO]
     The **Transfer Request** field will only show if the **Carrier PO required TR** option is set to **The Carrier PO is the default of Item (Optional/Mandatory)** in the [Configuration](./receive.md#configuration).
     :::
     <CustomDetails summary="Transfer Request Search Modal">
@@ -655,7 +655,7 @@ If you select **Per Serial** and click **Print**, a single-page pdf will be crea
 
 If you select **Per Unit/Pack** and click **Print**, you will be taken to the [Print: Box Distribution Setup](./receive.md#print-box-distribution-setup) screen.
 
-:::info
+:::note[INFO]
 For now, you can find all PDFs in the project folder inside the /PDF/PO/ directory.
 :::
 
@@ -855,7 +855,7 @@ If everything looks correct, click **Next** to **execute** the transfer and to g
 Currently, all users can access the configuration.
 :::
 
-:::info
+:::note[INFO]
 Only administrators can access the configuration for a web app.
 :::
 

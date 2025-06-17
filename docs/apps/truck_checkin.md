@@ -176,7 +176,7 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 Once you select a **transportation document**, you will be taken to the [Questions](./truck_checkin.md#questions) screen.
 
-:::info
+:::note[INFO]
 Keep in mind that once you select one of the open transportation documents, said document will automatically be assigned in SAP to the GRPO you previously created.
 :::
 
@@ -204,7 +204,7 @@ For **transfer requests**, you need to select the **CheckIn Type**: **Inbound** 
 
 Once you answer the questions click **Next** at the bottom to complete the check-in process. After that, you have a the same screen as a summary, you can click **Next** again to go to the [Home](./truck_checkin.md#carrier-selection) screen.
 
-:::info
+:::note[INFO]
 Completing the check-in process will create a QC Order document in BEAS with the status set to **CheckIn**.
 :::
 

@@ -81,7 +81,7 @@ You also have the **Remarks** field to leave some comments.
 
 And last but not least, you have the **Transfer Lines** associated with the current **transfer request**. Use this section to revise the information and to change the **Priority** of any of the lines, if needed.
 
-:::info
+:::note[INFO]
 If you want to change the **designation type**, click the [Transport](./transfer_request_designation.md#transport) tab.
 :::
 
@@ -149,7 +149,7 @@ The title of the modal does not match its functionality. **~User~** <IIcon icon=
 
 And  last but not least, you can use the **Comment** field to add extra information on the process.
 
-:::info
+:::note[INFO]
 If you want to change the **designation type**, click the [Transfer](./transfer_request_designation.md#transfer) tab.
 :::
 

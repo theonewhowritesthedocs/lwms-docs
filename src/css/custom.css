@@ -59,6 +59,16 @@ html[data-theme='dark'] .theme-admonition-warning {
   border-left: 8px solid var(--ifm-color-warning);
 }
 
+html[data-theme='light'] .theme-admonition-note {
+  background-color: #f7f7f7;
+  border-color: #000;
+}
+
+html[data-theme='dark'] .theme-admonition-note {
+  background-color: rgb(31, 31, 31);
+  border-color: #fff;
+}
+
 html[data-theme='dark'] body {
   background-color: transparent;
 }

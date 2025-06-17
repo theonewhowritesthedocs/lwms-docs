@@ -54,7 +54,7 @@ stateDiagram-v2
 
 ### Option: Select Carrier
 
-:::info
+:::note[INFO]
 This screen is only shown if **Check if the Transfer Request document has a Truck Log linked** <u>is not</u> checked in the [**Configuration**](./shipping_multi_site_transfer.md#configuration).
 :::
 
@@ -112,7 +112,7 @@ The exact screen you will see will depend on the **Check if the Transfer Request
 
 If you want to use a **Carrier Purchase Order**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Carrier PO Search** modal.
 
-:::info
+:::note[INFO]
 If **Check if the Transfer Request document has a Truck Log linked** <u>is</u> checked in the [Configuration](./shipping_multi_site_transfer.md#configuration), the search results will only include carrier purchase orders that are open <u>and</u> have already checked in.
 :::
 
@@ -210,7 +210,7 @@ The exact screen you will see will depend on what screen you got here from:
 
 Click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Transfer Request Search** modal.
 
-:::info
+:::note[INFO]
 The search results will depend on if you are using a **GRPO** or a **Carrier PO**. If it is the latter, you will be able to choose from only the **Transfer Requests** linked to the **Carrier PO**. If it is the former, you will be able to choose from all the **Transfer Requests** currently **open**.
 :::
 
@@ -384,7 +384,7 @@ Once you are done, click **Next** at the bottom to go to one of the home screens
 
 ## Configuration
 
-:::info
+:::note[INFO]
 Only administrators can access the configuration for a web app.
 :::
 

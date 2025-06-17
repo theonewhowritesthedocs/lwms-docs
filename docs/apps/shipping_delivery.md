@@ -54,7 +54,7 @@ stateDiagram-v2
 
 ### Option: Select Carrier
 
-:::info
+:::note[INFO]
 This screen is only shown if **Truck Log Enabled or disabled** <u>is not</u> checked in the [**Configuration**](./shipping_delivery.md#configuration).
 :::
 
@@ -112,7 +112,7 @@ The exact screen you will see will depend on the **Truck Log Enabled or disabled
 
 If you want to use a **Carrier Purchase Order**, click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Carrier Purchase Order Search** modal.
 
-:::info
+:::note[INFO]
 If **Truck Log Enabled or disabled** <u>is</u> checked in the [Configuration](./shipping_delivery.md#configuration), the search results will only include **carrier purchase orders** that are open <u>and</u> have already checked in.
 :::
 
@@ -210,7 +210,7 @@ The exact screen you will see will depend on what screen you got here from:
 
 Click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **Sales Order Search** modal.
 
-:::info
+:::note[INFO]
 The search results will depend on if you are using a **GRPO** or a **Carrier PO**. If it is the latter, you will be able to choose from only the **Sales Orders** linked to the **Carrier PO**. If it is the former, you will be able to choose from all the **Sales Orders** currently **open**.
 :::
 
@@ -449,7 +449,7 @@ You can erase the signature by clicking the **Clear Signature** button.
 
 Next up is saving the information in the system, click **Save** at the bottom for that. 
 
-:::info
+:::note[INFO]
 Saving will create a **Delivery** document in SAP.
 :::
 
@@ -457,7 +457,7 @@ At the end, you have the option of **printing** the document and **attaching** p
 
 Click **Print** at the bottom to generate a PDF with the information for the delivery and the signature.
 
-:::info
+:::note[INFO]
 The PDFs are saved in the **Report** folder for the project.
 :::
 
@@ -479,7 +479,7 @@ If you want to close any of the modals without saving anything, click the <IIcon
 
 </CustomDetails>
 
-:::info
+:::note[INFO]
 All pictures are listed in the **Attachments** tab for each **Delivery** document in SAP.
 :::
 
@@ -487,7 +487,7 @@ Once you are done, click **Next** at the bottom to go to the [Home](./shipping_d
 
 ## Configuration
 
-:::info
+:::note[INFO]
 Only administrators can access the configuration for a web app.
 :::
 

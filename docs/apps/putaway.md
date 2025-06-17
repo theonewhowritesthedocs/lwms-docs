@@ -3,6 +3,8 @@ sidebar_position: 1
 ---
 
 import CustomDetails from "@site/src/components/CustomDetails";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Putaway
 
@@ -19,7 +21,8 @@ stateDiagram-v2
     state "Go to Transfer Request Designation" as transfer_req_designation
     state "Execute Transfer" as exec_transfer
 
-    state if_finish_op <<choice>>
+    state if_finish_op1 <<choice>>
+    state if_finish_op2 <<choice>>
     state if_transfer_req_designation <<choice>>
 
     [*] --> select_origin_location
@@ -28,11 +31,12 @@ stateDiagram-v2
     select_stock --> stock
 
     
-    stock --> if_finish_op: Operation type
-    if_finish_op --> exec_transfer
+    stock --> if_finish_op1: Config
+    if_finish_op1 --> if_finish_op2: LPN disabled. <br> Operation type.
+    if_finish_op1 --> exec_transfer: LPN enabled
+    if_finish_op2 --> exec_transfer
     exec_transfer --> [*]
-
-    if_finish_op --> generate_transfer_req
+    if_finish_op2 --> generate_transfer_req
     generate_transfer_req --> if_transfer_req_designation:  Assign
     if_transfer_req_designation --> transfer_req_designation: Yes
     if_transfer_req_designation --> [*]: No
@@ -79,19 +83,26 @@ If you want to close the modal without making any changes, click the <IIcon icon
 
 </CustomDetails>
 
-:::info
-In the [Configuration](./putaway.md#configuration), if **personnel_origin_location** is set to **true**, the *Personnel*'s location is set as the origin location, that includes the **Bin Location** as well, if applicable. If it is set to **false**, the location must be defined *manually*.
+:::note[INFO]
+The behavior of the **Origin Location** will vary depending on the **Location linked to personnel ID as the default location** setting in the [Configuration](./putaway.md#configuration).
 :::
 
 Once you are done, click **Next** to go to the [Stock Lines Summary](./putaway.md#stock-lines) screen.
 
 ### Stock Lines Summary
 
-<!-- [<IIcon icon="nrk:back" width="17" height="17" /> Go back to the **Origin Location** screen](./putaway.md#origin-location) -->
-
 On this screen you need to select the stock lines that will be transferred.
 
-![Origin Location](./img-putaway/stock_lines_ready.png)
+The exact way the rows in the table will look like will depend on if it is loose inventory or license plate stock.
+
+<Tabs>
+  <TabItem value="inventory" label="Inventory" default>
+    ![Origin Location](./img-putaway/stock_lines_ready_inventory_screen.png)
+  </TabItem>
+  <TabItem value="lpn" label="License Plate">
+    ![Origin Location](./img-putaway/stock_lines_ready_lpn_screen.png)
+  </TabItem>
+</Tabs>
 
 First, you need to **add** a stock line. For that, click the **Add Stock** button. That will take you to the [Add or Modify Stock Line](./putaway.md#add-or-modify-stock-line) screen, for you to select/modify the necessary information.
 
@@ -99,7 +110,11 @@ You can also **edit** any of the stock lines you already have by clicking on the
 
 If you want to delete a stock line, click the <IIcon icon="ic:baseline-delete" width="17" height="17" /> button for the respective stock.
 
-Once you are done, click **Next** to open the **Putaway Completion** modal.
+Once you are done, the following step will vary depending on the **Allows you to select License Plate to make transfers** setting in the [Configuration](./putaway.md#configuration). 
+
+If the setting <u>is</u> checked, click **Next** to **execute** the transfer on the spot. After that, you will be taken to the [Home](./putaway.md#origin-location) screen. 
+
+On the other hand, if the setting <u>is not</u> checked, click **Next** to open the **Putaway Completion** modal.
 
 <CustomDetails summary="Putaway Completion Modal">
 
@@ -117,7 +132,7 @@ Stock lines for which already a **Generate Transfer Request** has been applied, 
 
 After any of the options is selected, you will see a summary of what was done and information on the document that was created.
 
-Once you have taken note of the information you need, click the **Ok** or the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button for closing the modal. If you chose **Execute Transfer**, the buttons will take you to the [**Home**](./putaway.md#origin-location) screen. If you chose **Generate Transfer Request**, then they will open the **Task Designation** modal.
+Once you have taken note of the information you need, click the **Ok** or the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button for closing the modal. If you chose **Execute Transfer**, the buttons will take you to the [Home](./putaway.md#origin-location) screen. If you chose **Generate Transfer Request**, then they will open the **Task Designation** modal.
 
 #### Task Designation Modal
 
@@ -135,7 +150,18 @@ If you click **Yes**, the modal will close and you will be taken to the [**Trans
 
 On this screen you select the stock line from the inventory.
 
-![Select Stock Line Screen](./img-putaway/select_stock_line.png)
+<Tabs>
+  <TabItem value="inventory" label="Inventory" default>
+    ![Select Stock Line Inventory Screen](./img-putaway/select_stock_line_inventory_screen.png)
+  </TabItem>
+  <TabItem value="lpn" label="License Plate">
+    ![Select Stock Line License Plate Screen](./img-putaway/select_stock_line_lpn_screen.png)
+  </TabItem>
+</Tabs>
+
+You can use batches/serial numbers or License Plate Numbers (LPN). The options are mutually exclusive.
+
+First let's go over the process for selecting stock using batches/serial numbers. For that, make sure you are in the **Inventory** tab.
 
 Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the fields to open the search modals. You have the **Item**, **I-Version**, **Batch/Serial Number**, **Warehouse**, and **Location** search modals.
 
@@ -212,15 +238,45 @@ The **Quantity** will depend on the **Batch/Serial Number** selected.
 
 The **Destination Warehouse** is the location to where the stock is going to be transferred. Below the **Destination Warehouse**, you will find a **Destination Bin Location** field, only if the **Destination Warehouse** is managed by one.
 
-:::info
-If **putaway_location** is set to **Y**, the **Destination Warehouse** will be the *default* of the item selected, and that will be *mandatory*. If it is set to **N**, the **Destination Warehouse** will need to be selected *manually*. If it is set to **O**, the **Destination Warehouse** will be the *default* of the item selected, and that will be *optional*. This all includes the **Destination Bin Location** as well, if applicable.
+:::note[INFO]
+The behavior of the **Destination Location** will vary depending on the **Setting to define the putaway location for the item** setting in the [Configuration](./putaway.md#configuration). This only applies for the **Inventory** tab.
 :::
 
-Once you are done, click **Next** to go back to the [Stock Lines Summary](./putaway.md#stock-lines) screen.
+If you are done, click **Next** to save the changes and to go back to the [Stock Lines Summary](./putaway.md#stock-lines-summary) screen.
+
+Now, let's go over the process of selecting stock using License Plate Numbers (LPN). For that, make sure you are in the **License Plate** tab.
+
+:::note[INFO]
+Keep in mind that you can only select <u>full</u> license plates with all their stock. No partials.
+:::
+
+Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button to open the **License Plate Search** modal.
+
+<CustomDetails summary="License Plate Search Modal">
+
+On this screen you need to select one of the **license plates** listed. You will only see LPNs that are in the origin location you chose.
+
+![License plate search modal](./img-putaway/license_plate_search_modal.png)
+
+You can select any item by clicking on it, which will close the modal and take you back with that **license plate** already set.
+
+You can filter the list of **license plates** using the search box.
+
+If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
+
+</CustomDetails>
+
+After you select an LPN, you will see it reflected in the **License Plates** section. You can also see its stock in the **Strock** section.
+
+If you want to **unselect** an LPN, click the <IIcon icon="ic:baseline-delete" width="17" height="17" /> button on the rightmost column for the corresponding LPN.
+
+Next up is the **Destination Warehouse**. That is the location to where the stock is going to be transferred. Below the **Destination Warehouse**, you will find a **Destination Bin Location** field, only if the **Destination Warehouse** is managed by one.
+
+If you are done, click **Next** to save the changes and to go back to the [Stock Lines Summary](./putaway.md#stock-lines-summary) screen.
 
 ## Configuration
 
-:::info
+:::note[INFO]
 Only administrators can access the configuration for a web app.
 :::
 
@@ -230,5 +286,6 @@ On this screen you can set the settings that will apply to this web app.
 
 | Name | Description |
 | :--- | :--- |
-| Location linked to personnel ID as the default location | If checked, it will prefill the **origin** location with the default location for the personnel. Otherwise, it will leave the **origin location** empty for the user to choose one manually.
+| Location linked to personnel ID as the default location | If checked, it will prefill the **origin** location with the default location for the personnel. Otherwise, it will leave the **origin location** empty for the user to choose one manually. |
+| Allows you to select License Plate to make transfers | If checked, it will give the user the option of also selecting stock using LPNs. Otherwise, it will only give the user the option of selecting stock one item at a time. |
 | Setting to define the putaway location for the item | <ol><li>**The destination location is the default of Item (Mandatory):** This will prefill the **destination** location of the item with the default location for the item. The user <u>cannot</u> edit it.</li><li>**The destination location is the default of Item (Optional):** This will prefill the **destination** location of the item with the default location for the item. The user <u>can</u> edit it.</li><li>**The destination location is chosen by the user:** This will leave the **destination location** empty for the user to choose one manually.</li></ol> |
