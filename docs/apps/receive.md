@@ -12,7 +12,63 @@ The Receive web app allows you to log the necessary information and execute the 
 
 ## Flow Diagram
 
-TODO.
+```mermaid
+stateDiagram-v2
+    state "Select Carrier" as carrier1
+    state "Select PO/AP RI" as pori1
+    state "Select PO/AP RI" as pori2
+    state "Create Carrier GRPO" as carriergrpo1
+    state "Select Carrier PO" as carrierpo1
+    state "Create PO/AP RI GRPO" as porigrpo
+    state "Create PO/AP RI GRPO" as porigrpo2
+    state "Create GRPO per Line" as linegrpo1
+    state "Create GRPO per Line" as linegrpo2
+    state "Print" as print1
+    state "Print" as print2
+    state "Create/Select LPN" as create_select_lpn
+    state "Assign containers" as containers
+    state "Create/Select LPN" as create_select_lpn2
+    state "Assign containers" as containers2
+
+    state initialconfigchoices <<choice>>
+    state carrierchoices1 <<choice>>
+    state carrierpoandgrpochoices1 <<choice>>
+    state carrierpoandgrpochoices2 <<choice>>
+    state grpoperlinechoices1 <<choice>>
+    state grpoperlinechoices2 <<choice>>
+
+    [*] --> initialconfigchoices: Config
+    initialconfigchoices --> carrier1: Carrier PO Default of Item (Optional/Mandatory)
+    initialconfigchoices --> carrierpoandgrpochoices2: Carrier PO chosen by user
+    carrierpoandgrpochoices2 --> pori1
+    carrier1 --> carrierchoices1: Config
+    carrierchoices1 --> carriergrpo1: Truck Log OFF
+    carrierchoices1 --> carrierpo1: Truck Log ON/OFF
+    pori1 --> linegrpo1
+    carriergrpo1 --> carrierpoandgrpochoices1: Carrier type. <br> Config.
+    carrierpo1 --> carrierpoandgrpochoices1: Carrier type. <br> Config.
+    carrierpoandgrpochoices1 --> pori2: Carrier PO/GRPO. <br> Define Active ON/OFF.
+    carrierpoandgrpochoices1 --> porigrpo: Carrier PO. <br> Define Active OFF.
+    carrierpoandgrpochoices2 --> porigrpo2
+    porigrpo2 --> [*]
+    porigrpo --> [*]
+    pori2 --> linegrpo2
+
+    linegrpo1 --> grpoperlinechoices1: LPN?
+    grpoperlinechoices1 --> print1: No
+    grpoperlinechoices1 --> create_select_lpn: Yes
+    create_select_lpn --> containers
+    containers --> print1
+
+    linegrpo2 --> grpoperlinechoices2: LPN?
+    grpoperlinechoices2 --> print2: No
+    grpoperlinechoices2 --> create_select_lpn2: Yes
+    create_select_lpn2 --> containers2
+    containers2 --> print2
+    print2 --> [*]
+
+    print1 --> [*]
+```
 
 ## Screens
 
