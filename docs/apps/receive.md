@@ -603,13 +603,15 @@ If you want to add batches/serial numbers, click the <IIcon icon="pepicons-pop:d
 
 On this screen you will be able to **add/modify** batches/serial numbers.
 
-The first thing you will see is the **Batch** tab, giving you information for the batch selected, if any. You can modify the fields on this tab, and that will be reflected once you are done.
+The first thing you will see is the **Batch** tab, giving you information for the batch selected, if any. 
+
+You can modify the fields on this tab, and that will be reflected once you are done.
+
+Set the **Batch Number**, the **LPN UOM** (number of containers that will be used for handling the items), the **Quantity** and you are good to go.
 
 ![Batches: Extended Information search modal, with the Batch tab selected](./img-receive/batch_extended_information_batch.png)
 
 If you want to add a new batch, click the <IIcon icon="subway:add" width="17" height="17" />  button to use the **Batch** tab as a form.
-
-Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the fields to open the search modals. You have the **Batch/Serial Number** and **I-Version** search modals.
 
 ![Batches: Extended Information search modal, after clicking the plus button](./img-receive/batch_extended_information_batch2.png)
 
@@ -627,13 +629,108 @@ Once you have everything that you need, click the <IIcon icon="zondicons:close-s
 
 </CustomDetails>
 
-Next up is the **Quantity**. Set it to the value you see fit.
+Next up is the **Quantity**. Set it to the value you see fit, as long as you didn't use the extended modal, otherwise, the quantity will already be set.
 
-Once you are done, click **Save** at the bottom to create the grpo and to open the **Label Printing Modal**.
+Once you are done, click **Save** at the bottom to open the **UOM Quantity** modal.
+
+<CustomDetails summary="UOM Quantity Modal">
+
+On this modal you need to set the number of containers that will be used for transporting the item with the quantity you selected.
+
+![UoM quantity modal](./img-receive/uom_quantity_modal.png)
+
+Once you are done, click **Ok** to generate the grpo and to go to the [Choice: Assign to LPN](./receive.md#choice-assign-to-lpn) screen.
+
+</CustomDetails>
+
+### Choice: Assign to LPN
+
+On this screen you need to choose if you want to assign the stock to an LPN or not.
+
+![Choice assign to lpn screen](./img-receive/choice_assign_lpn_screen.png)
+
+If you select **Yes** and click **Next**, the **Assign License Plate** modal will open.
+
+<CustomDetails summary="Assign License Plate Modal">
+
+On this modal you need to choose between creating new LPNs for the process and using existing LPNs.
+
+![Assign license plate add modal](./img-receive/assign_lp_modal.png)
+
+If you click **Create New**, the **Add License Plate: Add** modal will open.
+
+<CustomDetails summary="Add License Plate: Add Modal">
+
+On this modal you can create LPNs.
+
+![Add license plate modal](./img-receive/add_lp_add_modal.png)
+
+First you need to select the type of LPN you are going to create: **Permanent Transfer** (PF-XXXX), **Permanent Transport** (PP-XXXX), **Temporary** (T-XXXX) and **External** (E-XXXX).
+
+Next, you need to set the **Auto N°** field to the number of LPNs you want to create. All LPNs are **auto-incremental**.
+
+Once you are done, click the <IIcon icon="ph:plus-fill" width="17" height="17" /> button to go to the **License Plates Summary** section.
+
+![license plates summary modal](./img-receive/lp_summary_modal.png)
+
+You can **add** more LPNs by clicking the **Add License Plate** button.
+
+You can **filter** the list of LPNs using the search box.
+
+You can **remove** any of the LPNs by clicking the <IIcon icon="ic:baseline-delete" width="17" height="17" /> button on the rightmost column. Keep in mind that at this point no LPN has actually been created in the system.
+
+If you have everything that you need, click **Next** to actually create the LPNs in the system and to go to the [LPN Overview](./receive.md#lpn-overview) screen.
+
+</CustomDetails>
+
+If you click **Select Existing**. the **Add License Plate: Select** modal will open.
+
+<CustomDetails summary="Add License Plate: Select Modal">
+
+On this modal you can select already existing LPNs.
+
+![Add license plate select modal](./img-receive/add_lp_select_modal.png)
+
+Click the <IIcon icon='iconamoon:search-bold' width='17' height='17' /> button to open the **License Plate Search** modal.
+
+<CustomDetails summary="License Plate Search Modal">
+
+On this screen you need to select one of the **License Plates** listed.
+
+![License plate search modal](./img-receive/license_plate_search_modal.png)
+
+You can select any item by clicking on it, which will close the modal and take you back with that **License Plate** already set.
+
+You can filter the list of **License Plates** using the search box.
+
+If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
+</CustomDetails>
+
+After you select one of the license plates, you will see all the information related to it.
+
+![license plate info modal](./img-receive/lp_info_modal.png)
+
+If everything seems correct, click **Next** to go to the **License Plates Summary** section.
+
+![license plate summary modal](./img-receive/lp_summary_select_modal.png)
+
+You can **add** more LPNs by clicking the **Add License Plate** button.
+
+You can **filter** the list of LPNs using the search box.
+
+You can **unselect** any of the LPNs by clicking the  button on the rightmost column.
+
+If you have everything that you need, click **Next** to go to the [LPN: Overview](./receive.md#lpn-overview) screen.
+
+</CustomDetails>
+
+</CustomDetails>
+
+On the other hand, if you select **No**, the **Label Printing** modal will open.
 
 <CustomDetails summary="Label Printing Modal">
 
-The first thing you will be given is a choice: **Do you want to prin the labels?**
+The first thing you will be given is a choice: **Do you want to print the labels?**
 
 ![Printing choice modal](./img-receive/label_printing_choice_modal.png)
 
@@ -653,13 +750,115 @@ If you select **Per Batch** and click **Print**, a pdf will be created with the 
 
 If you select **Per Serial** and click **Print**, a single-page pdf will be created with the item and serial number information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
 
-If you select **Per Unit/Pack** and click **Print**, you will be taken to the [Print: Box Distribution Setup](./receive.md#print-box-distribution-setup) screen.
+If you select **Per Unit/Pack** and click **Print**, you will be taken to the [Print: Box Distribution Setup](./receive.md#print-box-distribution-setup) screen (for serial numbers) or to the [Print: Batch List](./receive.md#print-batch-list) screen (for batches).
 
 :::note[INFO]
-For now, you can find all PDFs in the project folder inside the /PDF/PO/ directory.
+You can find all PDFs in the project folder inside the /PDF/PO/ directory.
 :::
 
 </CustomDetails>
+
+### LPN: Overview
+
+On this screen you can see the list of LPNs you created.
+
+![lpn overview screen](./img-receive/lpn_overview_screen.png)
+
+<CustomDetails summary="Table Reference">
+  | Column | Description |
+  | --- | --- |
+  | License | License Plate. |
+  | Details | Action button to go to the batch selection screen. |
+</CustomDetails>
+
+If you are working with a **batch-managed** item, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the LPNs to go to the [LPN: Batch Selection](./receive.md#lpn-batch-selection) screen.
+
+If you are working with a **serial-managed** item, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the LPNs to go to the [LPN: Assign Serials](./receive.md#lpn-assign-serials) screen.
+
+Once you are done, click **Next** at the bottom to save the changes and open the **Label Printing** modal.
+
+<CustomDetails summary="Label Printing Modal">
+
+The first thing you will be given is a choice: **Do you want to print the labels?**
+
+![Printing choice modal](./img-receive/label_printing_choice_lpn_modal.png)
+
+If you click **No**, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+
+If you click **Yes, print**, you will be given another choice: **What type of label do you want to print?**
+
+![Label type printing modal](./img-receive/label_type_printing_lpn_modal.png)
+
+If you click **Cancel**, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+
+Otherwise, you have four options: **Per Line**, **Per Unit/Pack**, **Per Batch** and **Per Serial**. The last two options are <u>mutually exclusive</u> and will depend on if the item is managed by batches or serial number.
+
+If you select **Per Line** and click **Print**, a single-page pdf will be created with the line information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+
+If you select **Per Batch** and click **Print**, a pdf will be created with the item and batch information. One page for each batch. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+
+If you select **Per Serial** and click **Print**, a single-page pdf will be created with the item and serial number information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+
+If you select **Per Unit/Pack** and click **Print**, a number of pdfs equal to the number of boxes with all the boxes information will be created. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+
+:::note[INFO]
+You can find all PDFs in the project folder inside the /PDF/PO/ directory.
+:::
+
+</CustomDetails>
+
+### LPN: Batch Selection
+
+On this screen you can see the list of batches that you can work with.
+
+At the top you will see the LPN you are working with.
+
+![LPN: Batch Selection](./img-receive/lpn_batch_selection_screen.png)
+
+<CustomDetails summary="Table Reference">
+  | Column | Description |
+  | --- | --- |
+  | Batch | ID of the batch. |
+  | Item | ID of the item. |
+  | Quantity | Quantity. |
+  | Warehouse | Warehouse. |
+  | Details | Action button to go to the screen for Selecting containers. |
+</CustomDetails>
+
+Click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the batches to go to the [LPN: Box Distribution](./receive.md#lpn-box-distribution) screen.
+
+### LPN: Box Distribution
+
+On this screen you can see the list of containers that you specified before with the total quantity evenly divided into all the containers. The total quantity is distributed automatically and cannot be changed.
+
+At the top you will see the batch you are working with.
+
+![LPN: Box Distribution screen](./img-receive/lpn_box_distribution_screen.png)
+
+<CustomDetails summary="Table Reference">
+  | Column | Description |
+  | --- | --- |
+  | Select | Action button for selecting a container. |
+  | Box # | ID of the box. |
+  | Quantity | Quantity currently assigned to the container. |
+  | Status | Shows if the container is available or if it has alredy been assigned to an LPN. |
+</CustomDetails>
+
+Select containers by clicking the <IIcon icon="line-md:square" width="17" height="17"/> button on the leftmost column.
+
+Once you are done, click **Next** at the bottom to save the changes, assign the containers to the current LPN and to go back to the [LPN: Overview](./receive.md#lpn-overview) screen.
+
+### LPN: Assign Serials
+
+On this screen you can see the list of serial numbers that you can work with.
+
+At the top you will see the LPN you are working with.
+
+![LPN: Assign Serials](./img-receive/lpn_assign_serials.png)
+
+You need to assign serial numbers to the LPN. Click the <IIcon icon="line-md:square" width="17" height="17"/> button on the leftmost column to select a serial number. It's only one container with quantity of one for each serial number.
+
+Once you are done, click **Next** to save the changes, assign the serial numbers to the LPN and to go back to the [LPN: Overview](./receive.md#lpn-overview) screen.
 
 ### Print: Box Distribution Setup
 
@@ -703,6 +902,43 @@ You can **filter** the list of serial numbers using the search box.
 Click the <IIcon icon="gg:check-r" width="17" height="17" /> button on any of the serial numbers to select them.
 
 Once youn are done, click **Save** at the bottom to save the changes and to go back to the [Print: Box Distribution Setup](./receive.md#print-box-distribution-setup) screen.
+
+### Print: Batch List
+
+On this screen you can see a summary of the batches you can work with.
+
+![print: batch list](./img-receive/print_batch_list_screen.png)
+
+<CustomDetails summary="Table Reference">
+  | Column | Description |
+  | --- | --- |
+  | Batch | ID of the batch. |
+  | Item | ID of the item. |
+  | Quantity | Quantity. |
+  | Warehouse | Warehouse. |
+  | Details | Action button to go to the screen for handling quantities by containers. |
+</CustomDetails>
+
+For changing the quantity per container and printing, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17"/> button on the rightmost column to go to the [Print: Batch Distribution](./receive.md#print-batch-distribution) screen.
+
+### Print: Batch Distribution
+
+On this screen you can modify the quantity that each container is going to hold. You can also print the labels by unit/pack.
+
+On top of the containers table you can see the batch you are working with.
+
+![print: batch distribution screen](./img-receive/print_batch_distribution_screen.png)
+
+<CustomDetails summary="Table Reference">
+  | Column | Description |
+  | --- | --- |
+  | Box # | ID of the box. |
+  | Quantity | Quantity being handled by that specific container. |
+</CustomDetails>
+
+Set the quantities as you see fit, making sure to use the total quantity.
+
+Once you are done, click **Print** at the bottom to print the labels and to go to the [Line Selection](./receive.md#line-selection) screen.
 
 ### Return: Line Summary
 
