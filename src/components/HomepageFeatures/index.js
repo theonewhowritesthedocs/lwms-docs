@@ -94,6 +94,16 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'Reassign License Plate',
+    url: '/docs/apps/reassign_lpn',
+    Svg: require('@site/static/img/putaway.svg').default,
+    description: (
+      <>
+        Log the results of quality checks on a truck.
+      </>
+    ),
+  },
 ];
 
 function Feature({ Svg, title, description, url }) {
