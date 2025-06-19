@@ -108,6 +108,8 @@ Once you are done, click **Next** at the bottom to save (in the system), which a
 Keep in mind that assigning stock to LPNs creates a **reservation** for the stock and a **GRPO** for the new LPNs under the hood.
 :::
 
+At the end, you will get a modal asking you if you want to print the labels. Click **Yes** to print the labels and to start anew, or **No** to just start anew.
+
 ### Assign: Stock Summary
 
 On this screen you can **see**, **add**, **edit** and **remove** the stock that will be assigned to the LPN.
