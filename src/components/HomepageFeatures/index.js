@@ -100,7 +100,7 @@ const FeatureList = [
     Svg: require('@site/static/img/putaway.svg').default,
     description: (
       <>
-        Log the results of quality checks on a truck.
+        Assign and depalletize stock to and from LPNs.
       </>
     ),
   },

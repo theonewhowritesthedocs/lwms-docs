@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Reassign License Plate
 
-The Reassign License Plate WebApp allows you to link and unlink stock to and from LPNs.
+The Reassign License Plate WebApp allows you to assign and depalletize (unassign) stock to and from LPNs.
 
 ## Flow Diagram
 
