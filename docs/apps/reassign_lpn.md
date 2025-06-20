@@ -44,9 +44,10 @@ stateDiagram-v2
     print --> [*]
 
     operation_type_choices --> select_lpn: depalletize
-    select_lpn --> pick_stock
+    select_lpn --> done_choices2: are you done?
+    done_choices2 --> pick_stock: no
+    done_choices2 --> [*]: yes
     pick_stock --> select_lpn
-    select_lpn --> [*]
 ```
 
 ## Introduction
