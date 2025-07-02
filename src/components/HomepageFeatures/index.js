@@ -104,6 +104,16 @@ const FeatureList = [
       </>
     ),
   },
+  {
+    title: 'Reprinting',
+    url: '/docs/apps/reprinting',
+    Svg: require('@site/static/img/putaway.svg').default,
+    description: (
+      <>
+        Print labels for any GRPO and LPN.
+      </>
+    ),
+  },
 ];
 
 function Feature({ Svg, title, description, url }) {
