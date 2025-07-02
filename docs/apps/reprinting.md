@@ -12,7 +12,64 @@ The Reprinting WebApp allows you to print labels for any GRPO and LPN, in a vari
 
 ## Flow Diagram
 
-TODO.
+```mermaid
+stateDiagram-v2
+
+    state "Select Label Type" as labeltype
+    state "Select GRPO/LPN" as grpolpn
+    state "Select GRPO Line" as grpoline
+    state "Summary and Printing" as summary
+    state "Batch List" as batchlist
+    state "Box Distribution" as boxdist1
+    state "Set Number of Boxes" as numberofboxes
+    state "Batch Distribution" as batchdist
+    state "Assign Serials" as selectserials
+    state "Box Distribution" as boxdist2
+
+    state grpolpnchoices <<choice>>
+    state grpolinechoices <<choice>>
+
+    [*] --> labeltype
+    labeltype --> grpolpn
+    grpolpn --> grpolpnchoices: label type
+    grpolpnchoices --> grpoline: unit/pack
+    grpolpnchoices --> summary: all other
+    grpoline --> grpolinechoices: item management
+    grpolinechoices --> batchlist: batch-managed
+    grpolinechoices --> boxdist1: serial-managed
+    grpolinechoices --> numberofboxes: none-managed
+    grpolinechoices --> summary: label previously generated
+    batchlist --> batchdist
+    batchdist --> batchlist
+    boxdist1 --> selectserials
+    selectserials --> boxdist1
+    numberofboxes --> boxdist2
+    batchdist --> [*]: print
+    selectserials --> [*]: print
+    boxdist2 --> [*]: print
+    summary --> [*]: print
+    
+```
+
+## General Notes
+
+:::note[INFO]
+You can find all PDFs in the project folder inside the /PDF/PO/ directory.
+:::
+
+:::note[INFO]
+This is how the label-type printing works:
+
+**Line:** A single PDF with all the lines, consecutively.
+
+**Unit/Pack:** One PDF per box.
+
+**Batch:** A single PDF with one page per batch.
+
+**Serial:** A single PDF with one page per serial.
+
+**LPN:** A single PDF with one page per item/line.
+:::
 
 ## Screens
 
@@ -244,21 +301,3 @@ On this screen you can see a summary of what you are working with and print the 
 ---
 
 If everything seems right, click **Print** at the bottom to print the labels as you specified and to go the [Home](./reprinting.md#label-type-selection) screen.
-
-:::note[INFO]
-You can find all PDFs in the project folder inside the /PDF/PO/ directory.
-:::
-
-:::note[INFO]
-This is how the label-type printing works:
-
-**Line:** A single PDF with all the lines, consecutively.
-
-**Unit/Pack:** One PDF per box.
-
-**Batch:** A single PDF with one page per batch.
-
-**Serial:** A single PDF with one page per serial.
-
-**LPN:** A single PDF with one page per item/line.
-:::
