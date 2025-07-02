@@ -693,7 +693,7 @@ On this screen you need to set the **number of boxes** that will be used for tra
   | Details | Action button for opening the screen for assigning the batches/serial numbers. |
 </CustomDetails>
 
-After you set the number of boxes, a table an other information will be shown below.
+After you set the number of boxes, a table and other information will be shown below.
 
 You can distribute the total quantity as you see fit. Just make sure it matches the **Total Qty** down below.
 
@@ -720,7 +720,7 @@ You can **filter** the list of serial numbers using the search box.
 
 Click the <IIcon icon="gg:check-r" width="17" height="17" /> button on any of the serial numbers to select them.
 
-Once youn are done, click **Save** at the bottom to save the changes and to go back to the [Print: Box Distribution Setup](./receive.md#print-box-distribution-setup) screen.
+Once you are done, click **Save** at the bottom to save the changes and to go back to the [Print: Box Distribution Setup](./receive.md#print-box-distribution-setup) screen.
 
 ### Print: Batch List
 
@@ -738,17 +738,19 @@ On this screen you can see a summary of the batches you can work with.
   | Details | Action button to go to the screen for handling quantities by containers. |
 </CustomDetails>
 
+On top of the batches table you can see the GRPO you are working with.
+
 For changing the quantity per container and printing, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17"/> button on the rightmost column to go to the [Print: Batch Distribution](./receive.md#print-batch-distribution) screen.
 
 ### Print: Batch Distribution
 
 On this screen you can modify the quantity that each container is going to hold. You can also print the labels by unit/pack.
 
-On top of the containers table you can see the batch you are working with.
-
 ![print: batch distribution screen](./img-receive/print_batch_distribution_screen.png)
 
 <CustomDetails summary="Table Reference">
+
+On top of the containers table you can see the batch you are working with.
   | Column | Description |
   | --- | --- |
   | Box # | ID of the box. |
