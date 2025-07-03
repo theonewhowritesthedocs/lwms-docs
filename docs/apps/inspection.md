@@ -124,6 +124,11 @@ The next step is selecting the way in which you want to input the results: **Sam
 
 Once you select one, click **Next** to go to the respective screen: [Sample: Samples Summary](./inspection.md#sample-samples-summary) or [Test: Tests Summary](./inspection.md#test-tests-summary).
 
+
+:::note[INFO]
+You can only create activities for QC orders at the end of the Inspection process.
+:::
+
 ### Sample: Samples Summary
 
 On this screen you can see a summary of the **samples** associated with the selected QC order.
