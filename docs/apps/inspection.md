@@ -245,6 +245,10 @@ After that, you need to choose a device for taking the picture from the list of 
 
 If you want to close any of the modals without saving anything, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> or **Cancel** buttons.
 
+:::note[INFO]
+You can find the pictures in the project folder inside the `/images/Photos_attachments/` directory and also in the **Documents** section for a QC order in SAP.
+:::
+
 </CustomDetails>
 
 Once you are done here, click **Previous** at the bottom to go back to the [Sample: Samples Summary](./inspection.md#sample-samples-summary) screen and continue with other samples, if applicable.
@@ -372,6 +376,10 @@ After that, you need to choose a device for taking the picture from the list of 
 ![Take photo modal](./img-inspection/take-photo-modal.png)
 
 If you want to close any of the modals without saving anything, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> or **Cancel** buttons.
+
+:::note[INFO]
+You can find the pictures in the project folder inside the `/images/Photos_attachments/` directory and also in the **Documents** section for a QC order in SAP.
+:::
 
 </CustomDetails>
 
