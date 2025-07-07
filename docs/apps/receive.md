@@ -426,7 +426,7 @@ The first thing you will see is the **Batch** tab, giving you information for th
 
 You can modify the fields on this tab, and that will be reflected once you are done.
 
-Set the **Batch Number**, the **LPN UOM** (number of containers that will be used for handling the items), the **Quantity** and you are good to go.
+Set the **Batch Number**, the **LPN UOM** (number of containers that will be used for handling the items, 1 by default), the **Quantity** and you are good to go.
 
 ![Batches: Extended Information search modal, with the Batch tab selected](./img-receive/batch_extended_information_batch.png)
 
@@ -458,6 +458,10 @@ On this modal you need to set the number of containers that will be used for tra
 
 ![UoM quantity modal](./img-receive/uom_quantity_modal.png)
 
+:::note[INFO]
+The default UoM is 1.
+:::
+
 Once you are done, click **Ok** to generate the grpo and to go to the [Choice: Assign to LPN](./receive.md#choice-assign-to-lpn) screen.
 
 </CustomDetails>
@@ -484,7 +488,7 @@ On this modal you can create LPNs.
 
 ![Add license plate modal](./img-receive/add_lp_add_modal.png)
 
-First you need to select the type of LPN you are going to create: **Permanent Transfer** (PF-XXXX), **Permanent Transport** (PP-XXXX), **Temporary** (T-XXXX) and **External** (E-XXXX).
+First you need to select the type of LPN you are going to create: **Permanent Transfer** (PF-XXXX), **Permanent Transport** (PP-XXXX), **Temporary** (T-XXXX. <u>This is the default</u>) and **External** (E-XXXX).
 
 Next, you need to set the **Auto N°** field to the number of LPNs you want to create. All LPNs are **auto-incremental**.
 
@@ -594,6 +598,10 @@ If you are working with a **batch-managed** item, click the <IIcon icon="pepicon
 
 If you are working with a **serial-managed** item, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the LPNs to go to the [LPN: Assign Serials](./receive.md#lpn-assign-serials) screen.
 
+If you are working with a **none-managed** item and you are using **only one** LPN, as soon as you enter this screen, you will get the printing modal. You can reference that modal at the bottom.
+
+If you are working with a **none-managed** item and you are using **multiple** LPNs, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the LPNs to go to the [LPN: Item Assignment](./receive.md#lpn-item-assignment) screen.
+
 Once you are done, click **Next** at the bottom to save the changes and open the **Label Printing** modal.
 
 <CustomDetails summary="Label Printing Modal">
@@ -675,9 +683,34 @@ At the top you will see the LPN you are working with.
 
 ![LPN: Assign Serials](./img-receive/lpn_assign_serials.png)
 
+<CustomDetails summary="Table Reference">
+  | Column | Description |
+  | --- | --- |
+  | Select | Action button for selecting a serial number. |
+  | Serial | ID of the serial number. |
+  | Item Code | ID of the item. |
+  | Warehouse | Warehouse to where serial number will be entered. |
+</CustomDetails>
+
 You need to assign serial numbers to the LPN. Click the <IIcon icon="line-md:square" width="17" height="17"/> button on the leftmost column to select a serial number. It's only one container with quantity of one for each serial number.
 
 Once you are done, click **Next** to save the changes, assign the serial numbers to the LPN and to go back to the [LPN: Overview](./receive.md#lpn-overview) screen.
+
+### LPN: Item Assignment
+
+On this screen you can see the list of items and quantities that you can work with.
+
+![LPN: Item Assignments screen](./img-receive/lpn_item_assignment_screen.png)
+
+<CustomDetails summary="Table Reference">
+  | Column | Description |
+  | --- | --- |
+  | Item | ID of the item. |
+  | Quantity | Quantity that will be assigned from that item to the LPN selected. |
+  | Warehouse | Warehouse to where the item will be entered. |
+</CustomDetails>
+
+If everything looks right, click **Next** at the bottom to save and assign the item(s) to the LPN and to go back to the [LPN: Overview](./receive.md#lpn-overview) screen.
 
 ### Print: Box Distribution Setup
 
