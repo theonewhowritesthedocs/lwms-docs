@@ -24,9 +24,9 @@ Table **LWMS_DOC_ATTACH**.
 | Type | U_type | Document type | Text |
 | Text | U_img | Image URI | Text |
 
-# References
+<!-- # References
 
 - [Inspection.](/docs/apps/inspection)
 - [Shipping Delivery.](/docs/apps/shipping_delivery)
 - [Shipping Multi-Site Transfer.](/docs/apps/shipping_multi_site_transfer)
-- [Receive.](/docs/apps/receive)
+- [Receive.](/docs/apps/receive) -->

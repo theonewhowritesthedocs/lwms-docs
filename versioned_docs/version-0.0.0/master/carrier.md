@@ -16,8 +16,8 @@ A **Business Partner (BP)** with the **Group** field set to **Carrier**.
 | BP Location | OCRD | U_LWMS_Whscode | Business Partner's Warehouse | Text |
 | BP Location (BinLocation) | OCRD | U_LWMS_Bincode | Business Partner's Bin Location | Text |
 
-# References
+<!-- # References
 
-- [Shipping Delivery.](/docs/apps/shipping_delivery)
-- [Shipping Multi-Site Transfer.](/docs/apps/shipping_multi_site_transfer)
-- [Receive.](/docs/apps/receive)
+- [Shipping Delivery.](../apps/shipping_delivery)
+- [Shipping Multi-Site Transfer.](../apps/shipping_multi_site_transfer)
+- [Receive.](../apps/receive) -->

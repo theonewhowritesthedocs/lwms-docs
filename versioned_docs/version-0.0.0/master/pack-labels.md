@@ -25,9 +25,9 @@ Table **PACKS_LABELS**.
 | Date | U_date | Creation date | Date |
 | Time | U_time | Creation time | Number |
 
-# References
+<!-- # References
 
-- [Inspection.](/docs/apps/inspection)
-- [Shipping Delivery.](/docs/apps/shipping_delivery)
-- [Shipping Multi-Site Transfer.](/docs/apps/shipping_multi_site_transfer)
-- [Receive.](/docs/apps/receive)
+- [Inspection.](../apps/inspection)
+- [Shipping Delivery.](../apps/shipping_delivery)
+- [Shipping Multi-Site Transfer.](../apps/shipping_multi_site_transfer)
+- [Receive.](../apps/receive) -->

@@ -42,8 +42,8 @@ The Personnel table doesn't allow you to add UDFs because it's a Beas table. The
 | Logistic | Employee assigned logistics tasks |
 
 ## References
-
-- [All WebApps.](/docs/category/web-apps)
+<!-- 
+- [All WebApps.](/docs/category/web-apps) -->
 
 <!-- ## User Defined Tables
 

@@ -113,9 +113,9 @@ Table **LWMS_PLATING_RES**.
 | ItemCode | U_itemcode | Item id | Text |
 | Quantity | U_quantity | Quantity | Number |
 
-## References
+<!-- ## References
 
-- [Putaway.](/docs/apps/putaway)
-- [Shipping Delivery.](/docs/apps/shipping_delivery)
-- [Shipping Multi-Site Transfer.](/docs/apps/shipping_multi_site_transfer)
-- [Receive.](/docs/apps/receive)
+- [Putaway.](../apps/putaway)
+- [Shipping Delivery.](../apps/shipping_delivery)
+- [Shipping Multi-Site Transfer.](../apps/shipping_multi_site_transfer)
+- [Receive.](../apps/receive) -->

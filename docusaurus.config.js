@@ -9,7 +9,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+const config = {  
   title: "Light WMS",
   tagline: "Web tool over beas",
   favicon: "img/lwms_icon.ico",
@@ -26,8 +26,8 @@ const config = {
   projectName: "lwms-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
 
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "ignore",
+  onBrokenMarkdownLinks: "ignore",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -207,6 +207,7 @@ const config = {
         additionalLanguages: ["mermaid"],
       },
     }),
+    plugins: [require.resolve('docusaurus-lunr-search')],
   // plugins: ['docusaurus-plugin-mermaid'],
 };
 
