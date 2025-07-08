@@ -47,6 +47,19 @@ const config = {
       ({
         docs: {
           sidebarPath: "./sidebars.js",
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '1.0.0 - AIA',
+              path: '1.0.0',
+              banner: "none",
+            },
+            '0.0.0': {
+              label: '0.0.0 - Eventide',
+              path: '0.0.0',
+              banner: "none",
+            },
+          },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -87,16 +100,21 @@ const config = {
           src: "img/light_wms_icon.svg",
         },
         items: [
+          {
+            type: 'docsVersionDropdown',
+            position: 'left',
+            dropdownActiveClassDisabled: false,
+          },
           // {
           //   type: "docSidebar",
           //   sidebarId: "docSidebar",
           //   position: "left",
           //   label: "Documentation",
           // },
-          {to: '/docs/category/introduction', label: 'Introduction', position: 'right'},
-          {to: '/docs/category/definitions', label: 'Definitions', position: 'right'},
-          {to: '/docs/category/master-data', label: 'Master Data', position: 'right'},
-          {to: '/docs/category/web-apps', label: 'Web Apps', position: 'right'},
+          { to: '/docs/category/introduction', label: 'Introduction', position: 'right' },
+          { to: '/docs/category/definitions', label: 'Definitions', position: 'right' },
+          { to: '/docs/category/master-data', label: 'Master Data', position: 'right' },
+          { to: '/docs/category/web-apps', label: 'Web Apps', position: 'right' },
           // {
           //   href: 'https://github.com/facebook/docusaurus',
           //   label: 'GitHub',

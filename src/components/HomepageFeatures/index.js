@@ -127,6 +127,9 @@ function Feature({ Svg, title, description, url }) {
 }
 
 export default function HomepageFeatures() {
+ const activeVersion = localStorage.getItem('docs-preferred-version-default');
+ console.log(activeVersion)
+
   return (
     <>
       <div className='features-label'><span>Shortcuts</span></div>
