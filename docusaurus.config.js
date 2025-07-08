@@ -46,16 +46,17 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          disableVersioning: false,
           sidebarPath: "./sidebars.js",
           lastVersion: 'current',
           versions: {
             current: {
-              label: '1.0.0 - AIA',
+              label: 'v1 — AIA',
               path: '1.0.0',
               banner: "none",
             },
             '0.0.0': {
-              label: '0.0.0 - Eventide',
+              label: 'v0 — Eventide',
               path: '0.0.0',
               banner: "none",
             },
@@ -102,19 +103,43 @@ const config = {
         items: [
           {
             type: 'docsVersionDropdown',
-            position: 'left',
+            position: 'right',
             dropdownActiveClassDisabled: false,
           },
+            {
+              type: 'doc',
+              docId: 'intro/intro',
+              label: 'Introduction',
+              position: 'left',
+            },
+            {
+              type: 'doc',
+              docId: 'definitions/location',
+              label: 'Definitions',
+              position: 'left',
+            },
+            {
+              type: 'doc',
+              docId: 'master/personnel',
+              label: 'Master Data',
+              position: 'left',
+            },
+            {
+              type: 'doc',
+              docId: 'apps/putaway',
+              label: 'Web Apps',
+              position: 'left',
+            },
           // {
           //   type: "docSidebar",
           //   sidebarId: "docSidebar",
           //   position: "left",
           //   label: "Documentation",
           // },
-          { to: '/docs/category/introduction', label: 'Introduction', position: 'right' },
-          { to: '/docs/category/definitions', label: 'Definitions', position: 'right' },
-          { to: '/docs/category/master-data', label: 'Master Data', position: 'right' },
-          { to: '/docs/category/web-apps', label: 'Web Apps', position: 'right' },
+          // { to: '/docs/category/introduction', label: 'Introduction', position: 'right' },
+          // { to: '/docs/category/definitions', label: 'Definitions', position: 'right' },
+          // { to: '/docs/category/master-data', label: 'Master Data', position: 'right' },
+          // { to: '/docs/category/web-apps', label: 'Web Apps', position: 'right' },
           // {
           //   href: 'https://github.com/facebook/docusaurus',
           //   label: 'GitHub',
