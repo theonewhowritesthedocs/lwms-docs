@@ -453,10 +453,6 @@ You can filter the list of **subjects** using the search box.
 
 If you want to close the modal without making any changes, click the <IIcon icon="zondicons:close-solid" width="17" height="17"/> button.
 
-:::danger[development]
-The title of the modal does not match its functionality. **~User~** <IIcon icon="mdi:arrow-right-thin" width="17" height="17" /> **Subject**.
-:::
-
 </CustomDetails>
 
 And  last but not least, you can use the **Comment** field to add extra information on the process.
