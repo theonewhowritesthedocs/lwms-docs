@@ -455,13 +455,31 @@ Saving will create a **Delivery** document in SAP.
 
 At the end, you have the option of **printing** the document and **attaching** pictures. 
 
-Click **Print** at the bottom to generate a PDF with the information for the delivery and the signature.
+Click **Print** at the bottom to open the open the **Printing** modal. You can print multiple times/reports while on this screen.
+
+<CustomDetails summary="Printing Modal">
+
+On this modal you can select and print the type of report you want.
+
+![Printing modal](./img-shipping-delivery/printing_modal.png)
+
+You have 2 quick access crystal reports to make use of: **Report 1** and **Report 2**.
 
 :::note[INFO]
-The PDFs are saved in the **Report** folder for the project.
+You can link **Report 1** and **Report 2** to their respective crystal reports using the **The Delivery Report (1)** and **The Delivery Report (2)** settings respectively in the [**Configuration**](./shipping_delivery.md#configuration).
 :::
 
-You can also attach pictures as proof for eveything that was done. For that, click the <IIcon icon="mdi:camera" width="17" height="17"/> button at the bottom to open the **Add Picture** modal.
+Select one report and click **Print** to close the modal and print the PDFs. You have to wait for a confirmation popup to know it printed successfuly.
+
+:::note[INFO]
+The PDFs are saved in the `/Attachments/Delivery/[delivery-docentry]` folder for the project.
+:::
+
+If you want to close any of the modals without saving anything, click **Cancel**.
+
+</CustomDetails>
+
+You can also **attach pictures** as proof for eveything that was done. For that, click the <IIcon icon="mdi:camera" width="17" height="17"/> button at the bottom to open the **Add Picture** modal.
 
 <CustomDetails summary="Add Picture Modal">
 
@@ -502,3 +520,5 @@ On this screen you can set the settings that will apply to this web app.
 | Setting to allow to identify carrier | From this option will depend the first screen of the web app. You have three options: <br/> <br/> <ol><li>**Select Carrier (Mandatory):** This will make the user select a carrier for the process.</li><li>**Select Carrier (Optional):** This will give the user the option of choosing if they want to select a carrier or not.</li><li>**Select Carrier Not Provided:** This will skip the screen for selecting a carrier and will let the user select a sales order directly.</li></ol> |
 | Item to generate the Carrier PO | Here you can set the item that will be used when creating a GRPO. It can only be changed here. |
 | Personalized questions | You can configure up to ten (10) questions to be shown to users as a sort of truck quality control. You can set the label, if its going to be shown (Enable), and if it's going to be required to continue with the process (Mandatory). |
+| The Delivery Report (1) | Sets the first crystal report to be shown as an option when printing reports at the end of the delivery flow. <br/><br/> The list of crystal reports you can choose from will be defined by the crystal reports inside the `/Crystal_Reports` folder in the project directory. You can add/modify these anytime. |
+| The Delivery Report (2) | Sets the second crystal report to be shown as an option when printing reports at the end of the delivery flow. <br/><br/> The list of crystal reports you can choose from will be defined by the crystal reports inside the `/Crystal_Reports` folder in the project directory. You can add/modify these anytime. |
