@@ -455,7 +455,7 @@ Saving will create a **Delivery** document in SAP.
 
 At the end, you have the option of **printing** the document and **attaching** pictures. 
 
-Click **Print** at the bottom to open the open the **Printing** modal. You can print multiple times/reports while on this screen.
+Click **Print** at the bottom to open the **Printing** modal. You can print multiple times/reports while on this screen.
 
 <CustomDetails summary="Printing Modal">
 
