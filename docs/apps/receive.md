@@ -488,7 +488,7 @@ On this modal you can create LPNs.
 
 ![Add license plate modal](./img-receive/add_lp_add_modal.png)
 
-First you need to select the type of LPN you are going to create: **Permanent Transfer** (PF-XXXX), **Permanent Transport** (PP-XXXX), **Temporary** (T-XXXX. <u>This is the default</u>) and **External** (E-XXXX).
+First you need to select the type of LPN you are going to create: **Temporary** (T-XXXX. <u>This is the default</u>), **Permanent Transfer** (PF-XXXX), **Permanent Transport** (PP-XXXX) and **External** (E-XXXX).
 
 Next, you need to set the **Auto N°** field to the number of LPNs you want to create. All LPNs are **auto-incremental**.
 
@@ -553,13 +553,7 @@ On the other hand, if you select **No**, the **Label Printing** modal will open.
 
 <CustomDetails summary="Label Printing Modal">
 
-The first thing you will be given is a choice: **Do you want to print the labels?**
-
-![Printing choice modal](./img-receive/label_printing_choice_modal.png)
-
-If you click **No**, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
-
-If you click **Yes, print**, you will be given another choice: **What type of label do you want to print?**
+You will be given a choice: **What type of label do you want to print?**
 
 ![Label type printing modal](./img-receive/label_type_printing_modal.png)
 
@@ -567,13 +561,41 @@ If you click **Cancel**, you will be taken back to the [Line Selection](./receiv
 
 Otherwise, you have four options: **Per Line**, **Per Unit/Pack**, **Per Batch** and **Per Serial**. The last two options are <u>mutually exclusive</u> and will depend on if the item is managed by batches or serial number.
 
-If you select **Per Line** and click **Print**, a single-page pdf will be created with the line information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+- If you select **Per Line** and click **Print**, a single-page pdf will be created with the line information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
 
-If you select **Per Batch** and click **Print**, a pdf will be created with the item and batch information. One page for each batch. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+- If you select **Per Batch** and click **Print**, a pdf will be created with the item and batch information. One page for each batch. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
 
-If you select **Per Serial** and click **Print**, a single-page pdf will be created with the item and serial number information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+- If you select **Per Serial** and click **Print**, a single-page pdf will be created with the item and serial number information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
 
-If you select **Per Unit/Pack** and click **Print**, you will be taken to the [Print: Box Distribution Setup](./receive.md#print-box-distribution-setup) screen (for serial numbers) or to the [Print: Batch List](./receive.md#print-batch-list) screen (for batches).
+- If you select **Per Unit/Pack** and click **Print**, you will be taken to the [Print: Box Distribution Setup](./receive.md#print-box-distribution-setup) screen (for serial numbers), to the [Print: Batch List](./receive.md#print-batch-list) screen (for batches), or open the **Unit/Pack Printing** modal (for none-managed items).
+  
+<CustomDetails summary="Unit/Pack Printing Modal">
+
+You first need to select the number of boxes that are being used for distribution of the received quantity.
+
+![Unit/Pack Printing: Number of Boxes Modal](./img-receive/unitpack_printing_boxes_modal.png)
+
+Next, you have to specify how the distribution is being handled in each box. Set a quantity per box that adds up to the total being received.
+
+![Unit/Pack Printing: Number of Boxes Modal](./img-receive/unitpack_printing_distribution_modal.png)
+
+Once you are done, click **Ok** to print a number of pdfs equal to the number of boxes with their information.
+
+If you don't want to print anything, click **Cancel**.
+
+</CustomDetails>
+
+After going through the process of printing a label, the **Continue Printing** modal will open.
+
+<CustomDetails summary="Continue Printing Modal">
+
+![Continue Printing: LPN Assign Modal](./img-receive/continue_printing_lpn_assign_modal.png)
+
+If you want to print other types of labels click **Yes** to loop back to the **Label Printing** modal.
+
+Otherwise, click **No** to close the modal and to go back to the [Line Selection](./receive.md#line-selection) screen.
+
+</CustomDetails>
 
 :::note[INFO]
 You can find all PDFs in the project folder inside the /PDF/PO/ directory.
@@ -594,25 +616,19 @@ On this screen you can see the list of LPNs you created.
   | Details | Action button to go to the batch selection screen. |
 </CustomDetails>
 
-If you are working with a **batch-managed** item, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the LPNs to go to the [LPN: Batch Selection](./receive.md#lpn-batch-selection) screen.
+- If you are working with a **batch-managed** item, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the LPNs to go to the [LPN: Batch Selection](./receive.md#lpn-batch-selection) screen.
 
-If you are working with a **serial-managed** item, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the LPNs to go to the [LPN: Assign Serials](./receive.md#lpn-assign-serials) screen.
+- If you are working with a **serial-managed** item, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the LPNs to go to the [LPN: Assign Serials](./receive.md#lpn-assign-serials) screen.
 
-If you are working with a **none-managed** item and you are using **only one** LPN, as soon as you enter this screen, you will get the printing modal. You can reference that modal at the bottom.
+- If you are working with a **none-managed** item and you are using **only one** LPN, as soon as you enter this screen, you will get the printing modal. You can reference that modal at the bottom.
 
-If you are working with a **none-managed** item and you are using **multiple** LPNs, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the LPNs to go to the [LPN: Item Assignment](./receive.md#lpn-item-assignment) screen.
+- If you are working with a **none-managed** item and you are using **multiple** LPNs, click the <IIcon icon="pepicons-pop:dots-x" width="17" height="17" /> button on any of the LPNs to go to the [LPN: Item Assignment](./receive.md#lpn-item-assignment) screen.
 
 Once you are done, click **Next** at the bottom to save the changes and open the **Label Printing** modal.
 
 <CustomDetails summary="Label Printing Modal">
 
-The first thing you will be given is a choice: **Do you want to print the labels?**
-
-![Printing choice modal](./img-receive/label_printing_choice_lpn_modal.png)
-
-If you click **No**, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
-
-If you click **Yes, print**, you will be given another choice: **What type of label do you want to print?**
+You will be given a choice: **What type of label do you want to print?**
 
 ![Label type printing modal](./img-receive/label_type_printing_lpn_modal.png)
 
@@ -620,13 +636,25 @@ If you click **Cancel**, you will be taken back to the [Line Selection](./receiv
 
 Otherwise, you have four options: **Per Line**, **Per Unit/Pack**, **Per Batch** and **Per Serial**. The last two options are <u>mutually exclusive</u> and will depend on if the item is managed by batches or serial number.
 
-If you select **Per Line** and click **Print**, a single-page pdf will be created with the line information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+- If you select **Per Line** and click **Print**, a single-page pdf will be created with the line information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
 
-If you select **Per Batch** and click **Print**, a pdf will be created with the item and batch information. One page for each batch. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+- If you select **Per Batch** and click **Print**, a pdf will be created with the item and batch information. One page for each batch. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
 
-If you select **Per Serial** and click **Print**, a single-page pdf will be created with the item and serial number information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+- If you select **Per Serial** and click **Print**, a single-page pdf will be created with the item and serial number information. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
 
-If you select **Per Unit/Pack** and click **Print**, a number of pdfs equal to the number of boxes with all the boxes information will be created. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+- If you select **Per Unit/Pack** and click **Print**, a number of pdfs equal to the number of boxes with their information will be created. After that, you will be taken back to the [Line Selection](./receive.md#line-selection) screen.
+
+After going through the process of printing a label, the **Continue Printing** modal will open.
+
+<CustomDetails summary="Continue Printing Modal">
+
+![Continue Printing: LPN Assign Modal](./img-receive/continue_printing_lpn_assign_modal.png)
+
+If you want to print other types of labels click **Yes** to loop back to the **Label Printing** modal.
+
+Otherwise, click **No** to close the modal and to go back to the [Line Selection](./receive.md#line-selection) screen.
+
+</CustomDetails>
 
 :::note[INFO]
 You can find all PDFs in the project folder inside the /PDF/PO/ directory.
