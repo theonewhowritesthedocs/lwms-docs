@@ -276,6 +276,12 @@ You can use individual stock and/or you can select stock that is linked to **Lic
   </TabItem>
 </Tabs>
 
+On the **Quantity Summary** section up top you can see the **Selected** and **Needed** quantities. The latter tells you the quantity left to complete the order with this item, whereas the former shows the quantity that you have picked so far of this item for delivery.
+
+:::note[INFO]
+If the **Selected** quantity is <span style={{color: "red", textDecoration: "underline"}}>red and underlined</span>, it means you are **over-allocating**, so beware.
+:::
+
 The **Item No** comes from the previously chosen line.
 
 Click the <IIcon icon="iconamoon:search-bold" width="17" height="17" /> button on the fields to open the search modals. You have the **I-Version**, **Warehouse** and **Bin Location**.
