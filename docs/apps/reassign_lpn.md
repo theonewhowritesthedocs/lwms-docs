@@ -93,7 +93,7 @@ Once you do that, the next part of the screen will load below to continue with t
 
 Let's go over the process for **creating** new LPNs. Make sure you are in the **Create** tab.
 
-You need to select the type of LPN you are going to create: **Permanent Transfer** (PF-XXXX), **Permanent Transport** (PP-XXXX), **Temporary** (T-XXXX) and **External** (E-XXXX).
+You need to select the type of LPN you are going to create: **Temporary** (T-XXXX. <u>This is the default</u>), **Permanent Transfer** (PF-XXXX), **Permanent Transport** (PP-XXXX) and **External** (E-XXXX).
 
 Next, you need to set the **Auto N°** field to the number of LPNs you want to create. LPNs are **auto-incremental**.
 
