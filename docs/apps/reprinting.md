@@ -60,13 +60,9 @@ You can find all PDFs in the project folder inside the /PDF/PO/ directory.
 :::note[INFO]
 This is how the label-type printing works:
 
-**Line:** A single PDF with all the lines, consecutively.
-
 **Unit/Pack:** One PDF per box.
 
 **Batch:** A single PDF with one page per batch.
-
-**Serial:** A single PDF with one page per serial.
 
 **LPN:** A single PDF with one page per item/line.
 :::
@@ -75,7 +71,7 @@ This is how the label-type printing works:
 
 ### Label Type Selection
 
-On this screen you can select the way by which you want to print the label: **Line**, **Unit/Pack**, **Batch**, **Serial** and **LPN**.
+On this screen you can select the way by which you want to print the label: **Unit/Pack**, **Batch** and **LPN**.
 
 ![Label Type Selection screen](./img-reprinting/label_type_selection_screen.png)
 
@@ -119,6 +115,14 @@ If you want to close the modal without making any changes, click the <IIcon icon
 On this modal you need to select one of the **LPNs** listed.
 
 ![LPN Search modal](./img-reprinting/lpn_search_modal.png)
+
+<CustomDetails summary="Table Reference">
+  | Column | Description |
+  | --- | --- |
+  | License | License Plate. |
+  | ItemCode | Item assigned to the License Plate. |
+  | Quantity | Item quantity assigned to the Licese Plate. |
+</CustomDetails>
 
 You can select any item by clicking on it, which will close the modal with that **LPN** already set.
 
